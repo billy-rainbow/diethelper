@@ -1,0 +1,242 @@
+#!/usr/bin/python
+# ToDo: provide way to turn olumn headers off with '-c'
+
+import argparse, csv, os, sys
+
+from enum import Enum
+
+'''
+class CDatCols( Enum ):
+    CODE = 0
+    NAME = 1
+    WT   = 2
+    CAL  = 3
+    PROT = 4
+    DISP = 5
+code = CDatCols.CODE.value
+name = CDatCols.NAME.value
+wt   = CDatCols.WT.value
+cal  = CDatCols.CAL.value
+prot = CDatCols.PROT.value
+disp = CDatCols.DISP.value
+'''
+# character display controls
+CtlBold     = "\033[1m"                     # turn on bold print
+CtlBoldGr   = "\033[1;32m"                  # turn on bold, green
+CtlBoldUlGr = "\033[1;4;32m"                # turn on bold, underline, green
+CtlOff      = "\033[0m"                     # return all print control to normal
+
+ColW        = [ 15, 50, 10, 10, 10, 40 ]    # display column widths (see NItems)
+CdbDataTbl  = []
+CerealDB    = "cereal-4.db"
+ColMap      = {}
+ColErrRC    = 1
+DefSortCol  = "name"
+NItems      = 6                             # number of cereal data items (columns) per line of cereal database (see ColW)
+Pgm         = os.path.basename( __file__ )
+SortUp      = 'a'
+
+# sortcol = 5 # replace with column spec from command line (argparse)
+
+# fmtprt() formats a single line of {NItems} tab-separated entries into columns of {Col#w} widths
+def fmtprt( items ):
+    if( len( items ) != NItems ):
+        return "Error: data must occur in " + NItems + "-item, tab-delimited lines."
+
+    # print( ColMap )
+    fmtline = (
+        f"{items[ ColMap[ 'code' ]]:<{ColW[ ColMap[ 'code' ]]}}"
+        f"{items[ ColMap[ 'name' ]]:<{ColW[ ColMap[ 'name' ]]}}"
+        f"{items[ ColMap[ 'weight' ]]:>{ColW[ ColMap[ 'weight' ]]}}"
+        f"{items[ ColMap[ 'calories' ]]:>{ColW[ ColMap[ 'calories' ]]}}"
+        f"{items[ ColMap[ 'protein' ]]:>{ColW[ ColMap[ 'protein' ]]}}"
+        f"  {items[ ColMap[ 'display' ]]:<{ColW[ ColMap[ 'display' ]]}}"
+    )
+    return fmtline
+
+def parsecmdargs():
+    cmdargs = argparse.ArgumentParser( description = f"\033[1m{Pgm}\033[0m: display cereal database")
+    
+    cmdargs.add_argument( "-c", "--cols",  action="store_true",                     help="column names display, only" )
+    cmdargs.add_argument( "-k", "--key",   type=str,                                help="key character string to match" )
+    cmdargs.add_argument( "-o", "--order", type=str,            default='a',        help="order to sort in ( a: ascend, d: descend)" )
+    cmdargs.add_argument( "-r", "--rows",  type=int,            default=0,          help="row count of data to display" )
+    cmdargs.add_argument( "-s", "--sort",  type=str,            default=DefSortCol, help="sort column name" )
+
+    return cmdargs.parse_args()
+
+def main():
+    global ColMap
+    args = parsecmdargs()
+    
+    try:
+        with open( CerealDB, 'r' ) as cdb:
+            readcdb = csv.reader( cdb, delimiter='\t' )
+            
+            colnames = next( readcdb )
+            colnames = [ cdbcol.split( ' ', 1 )[ 0 ] for cdbcol in colnames ]
+            # print( "try block checkpoint 1" )
+            ColMap = { colname: idx for idx, colname in enumerate( colnames )}
+            # print( f"try block checkpoint 2 : {ColMap}" )
+            colidx = ColMap[ args.sort ]
+            # print( f"{CtlBold}header processed{CtlOff}" )
+            
+            for cerealdat in readcdb:
+                if cerealdat[ 2 ][ -1: ].isalpha():
+                    cerealdat[ 2 ] = int( cerealdat[ 2 ][ : -1 ])
+                if cerealdat[ 3 ][ -1: ].isalpha():
+                    cerealdat[ 3 ] = int( cerealdat[ 3 ][ : -1 ])
+                if cerealdat[ 4 ][ -1: ].isalpha():
+                    cerealdat[ 4 ] = float( cerealdat[ 4 ][ : -1 ])
+                CdbDataTbl.append( cerealdat )
+    except FileNotFoundError:
+        print( f"Error: cereal database '{CerealDB}' not found." )
+    except PermissionError:
+        print( f"Error: cereal database '{CerealDB}' permission problem." )
+    except IOError as err:
+        print( f"Error: failure with I/O on {CerealDB}" )
+    except Exception as err:
+        print( f"Error: unresolved error: {err}" )
+    
+    if args.cols:
+        print( f"{CtlBoldGr} {fmtprt( colnames )} {CtlOff}" )
+        sys.exit( 0 )
+    else:
+        print( f"{CtlBoldUlGr} {fmtprt( colnames )} {CtlOff}" )
+
+    if args.sort != DefSortCol:
+        if args.sort in ColMap:
+            sortcol = colidx
+        else:
+            print( f"Error: {CtlBold}{args.sort}{CtlOff} is not a valid column name.  Valid selections are: ", end='' )
+            # for cn in colnames:
+            #     print( f"{cn}   ", end='' )
+            # print()
+            # print( *colnames, sep=', ' )
+            # print( ', '.join( colnames ))
+            print( *sorted( colnames ), sep=", " )
+            sys.exit( ColErrRC )
+    else:
+        sortcol = ColMap[ DefSortCol ]
+    # print( f"column to sort by: {sortcol}\n" )
+    if args.order == SortUp:
+        sord = False
+    else:
+        sord = True
+    sorted_cdb = sorted( CdbDataTbl, key=lambda row: row[ sortcol ], reverse=sord)
+    rowctr = 1
+    for row in sorted_cdb:
+        # print( f"{CtlBold}\tProcessing row #{rowctr}:{CtlOff} {row}" )
+        if args.key:
+            # print( f"\t\tL{CtlBold}ooking for key:{CtlOff} {args.key}" )
+            # print( f"\t\t\ttype checks: args.key:{[ type( args.key )]}, {[ type( row )]}" )
+            if not any( args.key in str( citem ) for citem in row ):
+                continue
+        # print( f"{CtlBold}args.rows:{CtlOff}{args.rows}, {CtlBold}rowctr:{CtlOff}{rowctr}" )
+        if args.rows == 0 or rowctr <= args.rows:
+            print( fmtprt( row ))
+            rowctr += 1
+        else:
+            break
+
+if __name__ == "__main__":
+    main()
+
+'''
+import csv
+
+# Read the tab-delimited file and modify values as we read it
+file_path = 'your_file.txt'  # Replace with your file path
+
+with open(file_path, 'r') as file:
+    reader = csv.reader(file, delimiter='\t')
+    
+    # Read the header
+    header = next(reader)
+    
+    # Read and modify the rows as you go
+    modified_rows = []
+    for row in reader:
+        # Example: modify the 3rd column if a condition is met
+        if row[2] == 'some_value':  # Modify based on a condition
+            row[2] = 'new_value'  # Modify the value
+        modified_rows.append(row)
+
+# Sort the modified rows
+sorted_rows = sorted(modified_rows, key=lambda row: row[1])  # Sort by the 2nd column
+
+# Print the header and sorted rows
+print(header)
+for row in sorted_rows:
+    print(row)
+'''
+
+"""
+import csv
+
+# Read the tab-delimited file and modify the values as we go
+file_path = 'your_file.txt'  # Replace with your file path
+
+with open(file_path, 'r') as file:
+    reader = csv.reader(file, delimiter='\t')
+    
+    # Read the header (can rename 'header' to something more meaningful)
+    column_names = next(reader)
+    
+    # List to store modified rows
+    modified_rows = []
+
+    # Loop through each row in the file
+    for row in reader:
+        # Example: Assume column 1, 2, and 3 (index 0, 1, 2) contain numeric literals with quantifiers
+        
+        # Modify the 1st column (index 0) - remove quantifier and convert to float
+        if row[0][-2:].isalpha():  # Check if last 2 characters are letters (quantifier)
+            row[0] = float(row[0][:-2])  # Remove last 2 characters (quantifier) and convert to float
+        
+        # Modify the 2nd column (index 1) in a similar way
+        if row[1][-2:].isalpha():
+            row[1] = float(row[1][:-2])
+        
+        # Modify the 3rd column (index 2) in a similar way
+        if row[2][-2:].isalpha():
+            row[2] = float(row[2][:-2])
+
+        # Append the modified row to the list
+        modified_rows.append(row)
+
+# Print the modified rows
+print(column_names)
+for row in modified_rows:
+    print(row)
+"""
+
+'''
+import csv
+
+# Read the tab-delimited file and modify values as we go
+file_path = 'your_file.txt'  # Replace with your file path
+
+with open(file_path, 'r') as file:
+    reader = csv.reader(file, delimiter='\t')
+    
+    # Read the header (optional, can be renamed)
+    column_names = next(reader)
+    
+    # Process each row and modify the columns on-the-fly
+    for row in reader:
+        # Modify the 1st column (index 0)
+        if row[0][-2:].isalpha():
+            row[0] = float(row[0][:-2])  # Remove quantifier and convert to float
+        
+        # Modify the 2nd column (index 1)
+        if row[1][-2:].isalpha():
+            row[1] = float(row[1][:-2])
+        
+        # Modify the 3rd column (index 2)
+        if row[2][-2:].isalpha():
+            row[2] = float(row[2][:-2])
+
+        # Print the modified row immediately (or process it further)
+        print(row)
+'''

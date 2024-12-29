@@ -1,0 +1,38 @@
+#!/usr/bin/python3
+"""
+acting as a python programmer, write a script to split a text file into a list of  words. use spaces, commas, and close parentheses for delimiters. each word must have numbers and end with a lower case character 'c'.  delete from the list any words that include characters other than numbers and the lower case character 'c'.  the script should prompt for the name of the text file if it's not supplied as an argument on the command line.
+"""
+
+import os
+import sys
+import re
+
+def main():
+    # Get the name of the text file from the user if it wasn't supplied as an argument.
+    filename = input("Enter the name of the text file: ")
+
+    # Open the text file in read mode.
+    with open(filename, "r") as f:
+        data = f.read()
+
+    # Split the data into a list of words, using spaces, commas, and close parentheses as delimiters.
+    words = re.split("[ ,)(]", data)
+
+    # Create a list to store the valid words.
+    valid_words = []
+
+    # Iterate through the list of words.
+    for word in words:
+        # Check if the word has numbers and ends with a lower case character 'c'.
+        if re.match("[0-9]*c$", word):
+            # Add the word to the list of valid words.
+            valid_words.append(word)
+
+    # Print the list of valid words.
+    print("The valid words are:")
+    for word in valid_words:
+        print(word)
+
+if __name__ == "__main__":
+    main()
+

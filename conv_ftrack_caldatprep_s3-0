@@ -1,0 +1,67 @@
+#!/usr/bin/python
+
+import re
+
+def validate_and_process_line(line):
+    # Split the line into name and values
+    parts = line.strip().split(":", 1)
+    if len(parts) != 2:
+        return None  # Reject if there's no colon or malformed line
+    
+    name = parts[0].strip()
+    values = parts[1].strip().split()
+    
+    # Check if the number of value fields is valid (3 or 4)
+    if len(values) < 3 or len(values) > 4:
+        return None
+    
+    # Define expected units
+    expected_units = [None, "g", "c", "p"]
+    
+    # Prepare the output line
+    output = [name]
+    
+    # Handle the case where there's only 3 fields (prepend "null")
+    if len(values) == 3:
+        output.append("null")
+        start_idx = 0
+    else:
+        start_idx = 1
+    
+    for i, value in enumerate(values, start=start_idx):
+        # Extract number and unit using regex
+        match = re.match(r"^([\d.]+)([a-zA-Z]{1,3})$", value)
+        if not match:
+            return None  # Reject if the format is incorrect
+        
+        num, unit = match.groups()
+        # Validate the unit for the specific column (if applicable)
+        if expected_units[i] and unit != expected_units[i]:
+            return None
+        
+        # Append the number (with its unit preserved) to the output
+        output.append(f"{num}{unit}")
+    
+    # Join the output as a tab-delimited line
+    return "\t".join(output)
+
+
+def process_file(input_file, output_file):
+    with open(input_file, "r") as infile, open(output_file, "w") as outfile:
+        for line in infile:
+            processed_line = validate_and_process_line(line)
+            if processed_line:
+                outfile.write(processed_line + "\n")
+            else:
+                print(f"Rejected line: {line.strip()}")
+
+
+# Input and output file names
+input_filename = "input.txt"
+output_filename = "output.txt"
+
+# Process the file
+process_file(input_filename, output_filename)
+
+print(f"Processing complete. Check '{output_filename}' for results.")
+

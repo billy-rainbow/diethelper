@@ -1,0 +1,55 @@
+#!/usr/bin/python3
+"""
+Acting as a python programmer, write a script that checks the command line to see if a valid filename of an existing text file has been supplied. If no filename has been specified, the script should prompt for the name of the file.  Then, split the file into a list of  words using spaces, commas, and close parentheses for delimiters. Delete all words from the list that include characters that are not numbers or the lower case character 'c'.  Print the list on one line. Delete all non-numeric characters from each entry.  Delete all entries that are not valid numeric strings.  Add them all together, and print the sum prefixed with the string "Total calories: "
+
+Manual mods: imported os & sys; prefixed "argv" with "sys."; reordered list print to follow final list filter & reduction and changed list label from "Valid words" to "Calorie values"
+"""
+
+import os
+import sys
+import re
+
+def main():
+    # Check if a filename was provided on the command line
+    if len(sys.argv) == 2:
+        filename = sys.argv[1]
+    else:
+        # Prompt for the filename
+        filename = input("Enter the filename: ")
+
+    # Open the file
+    with open(filename, "r") as f:
+        data = f.read()
+
+    # Split the data into a list of words
+    words = re.split("[ ,()]", data)
+
+    # Delete all words that include characters that are not numbers or the lower case character 'c'
+    valid_words = []
+    for word in words:
+        if all(c.isdigit() or c == "c" for c in word):
+            valid_words.append(word)
+
+    # Delete all non-numeric characters from each entry
+    for i in range(len(valid_words)):
+        valid_words[i] = re.sub("[^\d]", "", valid_words[i])
+
+    # Delete all entries that are not valid numeric strings
+    valid_numbers = []
+    for word in valid_words:
+        try:
+            int(word)
+            valid_numbers.append(word)
+        except ValueError:
+            pass
+
+    print("Calorie values:", " ".join(valid_words))
+
+    # Add all the valid numbers together and print the sum
+    total_calories = 0
+    for number in valid_numbers:
+        total_calories += int(number)
+    print("Total calories:", total_calories)
+
+if __name__ == "__main__":
+    main()

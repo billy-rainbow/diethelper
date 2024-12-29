@@ -1,0 +1,45 @@
+#!/usr/bin/python3
+"""
+acting as a python programmer, write a script to split a text file into a list of  words. use spaces, commas, and close parentheses for delimiters. each word must have numbers and end with a lower case character 'c'.  delete from the list any words that include characters other than numbers and the lower case character 'c'.  print the list on one line delimited by spaces. delete the lower case character 'c' from each entry, add them all together, and print the sum prefixed with the string "Total calories: " the script should prompt for the name of the text file if it's not supplied as an argument on the command line.
+"""
+
+import os
+import sys
+import re
+
+def main():
+    # Get the name of the text file from the user if it's not supplied as an argument
+    filename = input("Enter the name of the text file: ")
+
+    # Open the text file and read the contents into a string
+    with open(filename, "r") as f:
+        data = f.read()
+
+    # Split the data into a list of words, using spaces, commas, and close parentheses as delimiters
+    words = re.split("[ ,)(]", data)
+
+    # Create a list to store the valid words
+    valid_words = []
+
+    # Iterate over the words list
+    for word in words:
+        # Check if the word contains only numbers and a lowercase 'c'
+        if all(c.isdigit() or c == "c" for c in word):
+            # Add the word to the valid words list
+            valid_words.append(word)
+
+    # Print the valid words on one line, delimited by spaces
+    print(" ".join(valid_words))
+
+    # Delete the lower case character 'c' from each entry in the valid words list
+    for i in range(len(valid_words)):
+        valid_words[i] = valid_words[i][:-1]
+
+    # Add all the numbers in the valid words list together
+    total_calories = sum(int(word) for word in valid_words)
+
+    # Print the total calories
+    print("Total calories:", total_calories)
+
+if __name__ == "__main__":
+    main()

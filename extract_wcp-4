@@ -1,0 +1,59 @@
+#!/bin/bash
+
+Pgm=`basename $0`
+TmpF=/tmp/tf.$Pgm
+
+if [ "$1" = "-x" ]; then
+    set -x
+fi
+echo "Replace this line with a cut & paste of only the cell data lines to sum." > $TmpF 
+vi -c "set noai" -c "set list" $TmpF
+sed -i '/^[[:space:]]*$/d' $TmpF
+
+# while read txt; do if [ -n "$txt" ]; then set $txt; echo "$1" | grep -q "^[a-zA-Z]" && printf "%s + " `echo "$txt" | cut -f1 -d'(' | sed 's/ /_/;s/_ *$//' | awk '{print $1}'`; fi; done < $TmpF
+# while read txt; do if [ -n "$txt" ]; then set $txt; echo "$1" | grep -q "^[a-zA-Z]" && printf "%10s + " `echo "$txt" | cut -f1 -d'(' | sed 's/ /_/;s/_ *$//' | awk '{print $1}'`; fi; done < $TmpF
+while read txt; do if [ -n "$txt" ]; then set $txt; echo "$1" | grep -q "^[a-zA-Z]" && printf "%10s + " `echo "$txt" | cut -f1 -d'(' | sed 's/ /_/;s/_ *$//' | cut -c1-10`; fi; done < $TmpF | sed 's/+ $//'
+echo
+
+while read txt; do [ -n "$txt" ] && set $txt || continue; echo $*; done < $TmpF | while read txt; do if [[ $txt =~ ^[[:alnum:]] ]]; then printf "\n%s " "$txt"; else printf "%s" "$txt"; fi; done | grep -v "^$" > $TmpF.wrk
+mv $TmpF.wrk $TmpF
+
+# ((while read txt; do set $txt; for item in $*; do echo "$item" | grep -q "^[(0-9]\+g,$" && printf "%s  " $item; done; echo; done < $TmpF | while read wt; do printf "%10s + " `echo $wt | sed 's/(//g;s/g.*//'`; done; echo '0') | sed 's/+ 0$//' | tee /dev/tty) | bc /.bc
+((while read txt; do set $txt; for item in $*; do echo "$item" | grep -q "^[(0-9]\+g,$" && printf "%s  " $item; done; echo; done < $TmpF | while read wt; do printf "%10s + " `echo $wt | sed 's/(//g;s/g.*//'`; done; echo '0') | sed 's/+ 0$//' | tr -d '\n' | tee /dev/tty) | bc /.bc
+((while read txt; do set $txt; for item in $*; do echo "$item" | grep -q "^[0-9]\+c,$" && printf "%s  " $item; done; echo; done < $TmpF | while read cal; do printf "%10s + " `echo $cal | sed 's/c.*//'`; done; echo '0') | sed 's/+ 0$//' | tee /dev/tty) | bc /.bc
+((while read txt; do set $txt; for item in $*; do echo "$item" | grep -q "^[0-9.]\+p" && printf "%s  " $item; done; echo; done < $TmpF | while read prot; do printf "%10s + " `echo $prot | sed 's/p.*//'`; done; echo '0') | sed 's/+ 0$//' | tee /dev/tty) | bc /.bc
+
+## while read -r line; do
+##     if [[ $line =~ ^[[:space:]] ]]; then
+##         # If the line starts with a space or tab, append it to the previous line
+##         previous_line="$previous_line $line"
+##     else
+##         # If not, print the previous line (if any) and set it to the current line
+##         if [[ -n "$previous_line" ]]; then
+##             echo "$previous_line"
+##         fi
+##         previous_line="$line"
+##     fi
+## done < your_file.txt
+## 
+## # Print the last line if it wasn't printed in the loop
+## if [[ -n "$previous_line" ]]; then
+##     echo "$previous_line"
+## fi
+
+## while read -r line; do
+##     if [ -n "$line" ] && [ "${line:0:1}" = " " -o "${line:0:1}" = $'\t' ]; then
+##         previous_line="$previous_line $line"
+##     else
+##         if [ -n "$previous_line" ]; then
+##             echo "$previous_line"
+##         fi
+##         previous_line="$line"
+##     fi
+## done < your_file.txt
+## 
+## if [ -n "$previous_line" ]; then
+##     echo "$previous_line"
+## fi
+
+# while read txt; do [ -n "$txt" ] && set $txt || continue; echo $*; done < /tmp/tf5 | while read txt; do if [[ $txt =~ ^[[:alnum:]] ]]; then printf "\n%s " "$txt"; else printf "%s" "$txt"; fi; done | grep -v "^$"

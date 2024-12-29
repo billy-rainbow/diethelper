@@ -1,0 +1,46 @@
+#!/usr/bin/python3
+"""
+Cacting as a python programmer, write a script to split a text file into a list of  words. use spaces, commas, and close parentheses for delimiters. each word must have numbers and end with a lower case character 'c'.  delete from the list any words that include characters other than numbers and the lower case character 'c'.  print the list on one line. delete the lower case character 'c' and any other non-numeric characters from each entry, add them all together, and print the sum prefixed with the string "Total calories: " the script should prompt for the name of the text file if it's not supplied as an argument on the command line.
+"""
+
+import os
+import sys
+import re
+
+def main():
+    # Get the name of the text file from the user if it wasn't supplied on the command line.
+    filename = input("Enter the name of the text file: ")
+
+    # Open the text file in read mode.
+    with open(filename, "r") as f:
+        data = f.read()
+
+    # Split the text into a list of words using spaces, commas, and close parentheses as delimiters.
+    words = re.split("[ ,()]", data)
+
+    # Create a list to store the valid words.
+    valid_words = []
+
+    # Iterate through the words list.
+    for word in words:
+        # Check if the word only contains numbers and the character 'c'.
+        if re.match("[0-9]*c$", word):
+            # Add the word to the valid words list.
+            valid_words.append(word)
+
+    # Print the valid words on one line.
+    print(" ".join(valid_words))
+
+    # Create a list to store the calories.
+    calories = []
+
+    # Iterate through the valid words list.
+    for word in valid_words:
+        # Remove the character 'c' and any other non-numeric characters from the word.
+        calories.append(int(word[:-1]))
+
+    # Add the calories together and print the sum.
+    print("Total calories:", sum(calories))
+
+if __name__ == "__main__":
+    main()

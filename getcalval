@@ -1,0 +1,78 @@
+#!/usr/bin/python3
+"""
+Acting as a python programmer, write a python script that:
+1) imports the os and sys modules
+2) prompts the user for the name of a plain text input file if one is not given on the command line;
+3) reads the file line at a time;
+4) makes a list out of each line by spliting it into words using commas, spaces, tabs, and parentheses as delimiters;
+5) for each element of the list, if ( the length of the element is greater than 1 and its last character is a 'g' ), then delete the 'g', delete all spaces and tabs, and only if the member can be converted to a number, add it to a list identified as weights;
+6) for each element of the list, if (the length of the element is greater than 1 and its last character is a 'c' ), then delete the 'c', delete all spaces and tabs, and only if the member can be converted to a number, add it to a list identified as calories;
+7) prints the weights list on one line;
+8) sums the weights list and prints the sum after the label: "Weights: ";
+9) prints the calories list on one line;
+10) sums the calories list and prints the sum after the label: "Calories: ";
+"""
+
+import os
+import re
+import sys
+
+def main():
+  # Check if a file name was passed on the command line
+  if len(sys.argv) == 1:
+    file_name = input("Enter the name of the input file: ")
+  else:
+    file_name = sys.argv[1]
+
+  # Open the file
+  try:
+    with open(file_name, "r") as f:
+      lines = f.readlines()
+  except FileNotFoundError:
+    print(f"Error: File '{file_name}' not found.")
+    sys.exit(1)
+
+  # Create lists to store the weights and calories
+  weights = []
+  calories = []
+
+  # Loop through the lines in the file
+  for line in lines:
+    # Split the line into words
+    # words = line.split(", ")
+    words = re.split(",| |\(|\)", line)
+
+    # For each word, if it ends in 'g', add it to the weights list
+    for word in words:
+      if len(word) > 1 and word[-1] == "g":
+        weight = word[:-1].strip()
+        try:
+          weights.append(float(weight))
+        except ValueError:
+          pass
+
+    # For each word, if it ends in 'c', add it to the calories list
+    for word in words:
+      if len(word) > 1 and word[-1] == "c":
+        calorie = word[:-1].strip()
+        try:
+          calories.append(float(calorie))
+        except ValueError:
+          pass
+
+  # Print the weights list
+  print("Weights:", weights)
+
+  # Print the total weight
+  total_weight = sum(weights)
+  print("Total Weight:", total_weight)
+
+  # Print the calories list
+  print("Calories:", calories)
+
+  # Print the total calories
+  total_calories = sum(calories)
+  print("Total Calories:", total_calories)
+
+if __name__ == "__main__":
+  main()

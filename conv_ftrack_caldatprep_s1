@@ -1,0 +1,18 @@
+# set -vx
+sed 's/,\+/,/g;s/",/\"\n/g;s/^"//' ftrack-2024Jan01-2024Dec24.csv | grep -Ev "^Mon$|^Tue$|^Wed$|^Thu$|^Fri$|^Sat$|^Sun$|^[0-9]|^ [0-9]|^food|^gym|^walk|^ride|^bike|^calbal|^prot|^Centrum" | sed 's/^"//;s/"//g' | grep -Ev "Centrum|^[a-zA-Z ]*:$" | sed 's/(.*)//' | grep -Ev ":|^$|^[0-9]||/$|c$|=|^[0-9.]\+[TCgn.]|Recipe " > /tmp/tf4
+lc=0
+while read txt; do
+    if ! echo "$txt" | grep -q "[0-9]\+p$"; then
+        read dtxt
+        while ! echo "$dtxt" | grep -q "[0-9]\+p$"; do
+            txt="$dtxt"
+            read dtxt
+        done
+        txt="$txt $dtxt"
+    fi
+    # echo "$txt" | grep -q "p$" || continue
+    echo $txt
+    # lc=$(( $lc + 1 ))
+    # [ $lc -gt 200 ] && exit
+done < /tmp/tf4 > /tmp/tf5
+echo "vi /tmp/tf[45]"

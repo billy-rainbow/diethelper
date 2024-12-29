@@ -1,0 +1,114 @@
+#!/usr/bin/python
+
+import re, sys
+import string
+
+MinFW = 14
+wcpDat = sys.argv[ 1 ]
+
+def extract_values( line ):
+    values = re.findall( r'(\d+(\.\d+)?)[cgp]', line )
+    #Debug print( "line inspected: ", values )
+    return [ float( value[ 0 ]) if value[ 1 ] else int( value[ 0 ]) for value in values ]
+
+def process_file( wcpDat ):
+    with open( wcpDat, 'r' ) as inF:
+        lines = inF.readlines()
+        #Debug print( "lines read: ", lines )
+
+    # Combine lines that don't begin with with alphabetic characters with the prior line that does
+    consolidated_lines = []
+    current_line = ""
+    for line in lines:
+        line = line.strip()
+        if line:
+            if line.startswith( tuple( string.ascii_letters + string.digits )):
+                if current_line.strip():
+                    #Debug print( "alphanum line, load & reset:    " + line )
+                    consolidated_lines.append( current_line[ : current_line.rindex( ')' ) + 1 ])
+                current_line = line + " "
+            else:
+                #Debug print( "NOT alphanum line, aggregate:    " + line )
+                current_line = current_line + line
+            #Debug print( "current_line:    " + current_line )
+    if current_line.strip():
+        consolidated_lines.append( current_line[ : current_line.rindex( ')' ) + 1 ])
+    #Debug print( "consolidated_lines:    ", consolidated_lines )
+    print( "len( consolidated lines ) = ", len( consolidated_lines ))
+    conlinect = len( consolidated_lines )
+    for item in consolidated_lines:
+        item = item[ : item.rindex( '(' )]
+        itemwls = item.split()
+        # first time through cpmpute MinFW, then reprocess all lines using the new FW - it will be used later on the values
+        if len( itemwls ) > 1:
+            print( f"{ (itemwls[ 0 ] + ' ' + itemwls[ -1 ]).ljust( MinFW ) }", end='' )
+        else:
+            print( f"{ itemwls[ 0 ].ljust( MinFW ) }", end='' )
+        conlinect -= 1
+        if conlinect:
+            print( " + ", end='' )
+    print()
+
+    # Extract and calculate values
+    weights = []
+    calories = []
+    proteins = []
+    weights_print = []
+    calories_print = []
+    proteins_print = []
+    conlineidx = len( consolidated_lines )
+    # print( f"consolidated line count: {conlineidx}" )
+    for line in consolidated_lines:
+        conlineidx -= 1
+        values = extract_values( line )
+        # print( f"values: {values} in line: {line}" )
+        weights.append( values[ 0 ])
+        calories.append( values[ 1 ])
+        proteins.append( values[ 2 ])
+        if conlineidx > 0:
+            weights_print.append( str( values[ 0 ] ) + ' + ' )
+            calories_print.append( str( values[ 1 ] ) + ' + ' )
+            proteins_print.append( str( values[ 2 ] ) + ' + ' )
+        else:
+             weights_print.append( str( values[ 0 ] ))
+             calories_print.append( str( values[ 1 ] ))
+             proteins_print.append( str( values[ 2 ] ))
+    fldw = 14
+    print( f"weight : ".rjust( fldw ), end='' )
+    for idx in range( 0, len( consolidated_lines ), 1 ):
+        print( f"{ (weights_print[ idx ]).rjust( fldw )}", end='' )
+        # print(f"The third element is: {sample_array[2]:5}")
+    print()
+    print( f"calories : ".rjust( fldw ), end='' )
+    for idx in range( 0, len( consolidated_lines ), 1 ):
+        print( f"{ (calories_print[ idx ]).rjust( fldw )}", end='' )
+    print()
+    print( f"protein : ".rjust( fldw ), end='' )
+    for idx in range( 0, len( consolidated_lines ), 1 ):
+        print( f"{ (proteins_print[ idx ]).rjust( fldw )}", end='' )
+    print()
+
+    print( f"{'Total Weight':<14} {sum( weights ):6d} grams")
+    print( f"{'Total Calories':<14} {sum( calories ):6d}")
+    print( f"{'Total Protein':<14} {sum( proteins ):8.1f} grams")
+
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) > 1:
+        fooddata = sys.argv[ 1 ]
+        process_file( fooddata )
+    else:
+        print( "Please provide a food data filename as an argument." )
+
+###########
+# clear accum
+# clear work
+# for line in lines
+#     if line
+#         if line alphanum then
+#             if work then
+#                 accum += work
+#             work = line
+#         else
+#             work = work + line
+#     get nextline

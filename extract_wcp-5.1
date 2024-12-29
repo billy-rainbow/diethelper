@@ -1,0 +1,31 @@
+import re
+
+def extract_values(line):
+    values = re.findall(r'\d+(\.\d+)?[cgp]', line)
+    return [float(value[:-1]) for value in values]
+
+def calculate_total(values, unit):
+    total = sum(values)
+    print(f"{unit.upper()} total: {total:.2f}")
+
+with open('input.txt', 'r') as iFile:
+    lines = f.readlines()
+
+    # Extract and calculate weights
+    weights = []
+    for line in lines:
+        weights.extend(extract_values(line))
+    calculate_total(weights, 'g')
+
+    # Extract and calculate calories
+    calories = []
+    for line in lines:
+        calories.extend(extract_values(line))
+    calculate_total(calories, 'c')
+
+    # Extract and calculate protein
+    proteins = []
+    for line in lines:
+        proteins.extend(extract_values(line))
+    calculate_total(proteins, 'p')
+

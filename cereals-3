@@ -1,0 +1,148 @@
+#!/usr/bin/python
+
+import csv
+
+Col0w = 15
+Col1w = 50
+Col2w = 10
+Col3w = 10
+Col4w = 13
+Col5w = 40
+CerealDB = "cereal-4.db"
+NItems = 6
+
+sortcol = 4 # replace with column spec from command line (argparse)
+
+# fmtprt() formats a single line of {NItems} tab-separated entries into columns of {Col#w} widths
+def fmtprt( items ):
+    if( len( items ) != NItems ):
+        return "Error: data must occur in " + NItems + "-item, tab-separated lines."
+
+    fmtline = (
+        f"{items[ 0 ]:<{Col0w}}"
+        f"{items[ 1 ]:<{Col1w}}"
+        f"{items[ 2 ]:>{Col2w}}"
+        f"{items[ 3 ]:>{Col3w}}"
+        f"{items[ 4 ]:>{Col4w}}"
+        f"  {items[ 5 ]:<{Col5w}}"
+    )
+    return fmtline
+
+def main():
+    try:
+        with open( CerealDB, 'r' ) as cdb:
+            readcdb = csv.reader( cdb, delimiter='\t' )
+            colnames = next( readcdb )  # skip header line (column labels)
+            sorted_cdb = sorted( readcdb, key=lambda row: row[ sortcol ])
+    except FileNotFoundError:
+        print( f"Error: cereal database '{CerealDB}' not found." )
+    except Exception as err:
+        print( f"Error: unresolved error: {err}" )
+
+    print( "\033[1;4;32m" + fmtprt( colnames ) + "\033[0m" )
+    for row in sorted_cdb:
+        print( fmtprt( row ))
+
+if __name__ == "__main__":
+    main()
+
+# import argparse
+
+'''
+import csv
+
+# Read the tab-delimited file and modify values as we read it
+file_path = 'your_file.txt'  # Replace with your file path
+
+with open(file_path, 'r') as file:
+    reader = csv.reader(file, delimiter='\t')
+    
+    # Read the header
+    header = next(reader)
+    
+    # Read and modify the rows as you go
+    modified_rows = []
+    for row in reader:
+        # Example: modify the 3rd column if a condition is met
+        if row[2] == 'some_value':  # Modify based on a condition
+            row[2] = 'new_value'  # Modify the value
+        modified_rows.append(row)
+
+# Sort the modified rows
+sorted_rows = sorted(modified_rows, key=lambda row: row[1])  # Sort by the 2nd column
+
+# Print the header and sorted rows
+print(header)
+for row in sorted_rows:
+    print(row)
+'''
+
+"""
+import csv
+
+# Read the tab-delimited file and modify the values as we go
+file_path = 'your_file.txt'  # Replace with your file path
+
+with open(file_path, 'r') as file:
+    reader = csv.reader(file, delimiter='\t')
+    
+    # Read the header (can rename 'header' to something more meaningful)
+    column_names = next(reader)
+    
+    # List to store modified rows
+    modified_rows = []
+
+    # Loop through each row in the file
+    for row in reader:
+        # Example: Assume column 1, 2, and 3 (index 0, 1, 2) contain numeric literals with quantifiers
+        
+        # Modify the 1st column (index 0) - remove quantifier and convert to float
+        if row[0][-2:].isalpha():  # Check if last 2 characters are letters (quantifier)
+            row[0] = float(row[0][:-2])  # Remove last 2 characters (quantifier) and convert to float
+        
+        # Modify the 2nd column (index 1) in a similar way
+        if row[1][-2:].isalpha():
+            row[1] = float(row[1][:-2])
+        
+        # Modify the 3rd column (index 2) in a similar way
+        if row[2][-2:].isalpha():
+            row[2] = float(row[2][:-2])
+
+        # Append the modified row to the list
+        modified_rows.append(row)
+
+# Print the modified rows
+print(column_names)
+for row in modified_rows:
+    print(row)
+"""
+
+'''
+import csv
+
+# Read the tab-delimited file and modify values as we go
+file_path = 'your_file.txt'  # Replace with your file path
+
+with open(file_path, 'r') as file:
+    reader = csv.reader(file, delimiter='\t')
+    
+    # Read the header (optional, can be renamed)
+    column_names = next(reader)
+    
+    # Process each row and modify the columns on-the-fly
+    for row in reader:
+        # Modify the 1st column (index 0)
+        if row[0][-2:].isalpha():
+            row[0] = float(row[0][:-2])  # Remove quantifier and convert to float
+        
+        # Modify the 2nd column (index 1)
+        if row[1][-2:].isalpha():
+            row[1] = float(row[1][:-2])
+        
+        # Modify the 3rd column (index 2)
+        if row[2][-2:].isalpha():
+            row[2] = float(row[2][:-2])
+
+        # Print the modified row immediately (or process it further)
+        print(row)
+'''

@@ -1,0 +1,62 @@
+#!/usr/bin/python3
+"""
+acting as a python programmer, write a python script that: 1) prompts the user for the name of a plain text input file if one is not given on the command line; 2) read the file line at a time; 3) makes a list out of each line by breaking it into words using commas, spaces, tabs, and parentheses as delimiters; 4) places all entries from the list that include only numbers except for a single terminating character 'g' in a new list identified as weights after deleting the terminal 'g character; 5) places all entries from the first list that include only numbers except for a single terminating character 'c' in a new list identified as calories after deleting the terminal 'c' character; 6) deletes all of the second, weights list members that can't be converted to numbers from the list and prints the list on one line; 7) sums the second, weights list; 8) prints the sum after the label: "Weights: "; 9) deletes all of the third, calories list members that can't be converted to numbers from the list prints the list on one line; 10) sums the third, calories list; 11) prints the sum after the label: "Calories: "
+"""
+
+import os
+import sys
+import re
+
+def main():
+  # Prompt the user for the input file name if not given on the command line
+  if len(sys.argv) == 1:
+    input_file_name = input("Enter the input file name: ")
+  else:
+    input_file_name = sys.argv[1]
+
+  # Open the input file
+  with open(input_file_name) as input_file:
+    lines = input_file.readlines()
+
+  # Create lists to store the weights and calories
+  weights = []
+  calories = []
+
+  # Iterate over the lines in the file
+  for line in lines:
+    # Split the line into words
+    words = line.split(", ")
+
+    # For each word, if its last character is a 'g', remove it and add it to the weights list
+    for word in words:
+      if word[-1] == "g":
+        word = word[:-1]
+        weights.append(float(word))
+
+    # For each word, if its last character is a 'c', remove it and add it to the calories list
+    for word in words:
+      if word[-1] == "c":
+        word = word[:-1]
+        calories.append(float(word))
+
+  # Remove any elements from the weights list that are not numbers
+  weights = [float(weight) for weight in weights if isinstance(weight, str)]
+
+  # Remove any elements from the calories list that are not numbers
+  calories = [float(calorie) for calorie in calories if isinstance(calorie, str)]
+
+  # Print the weights list
+  print("Weights: ", weights)
+
+  # Print the sum of the weights list
+  print("Sum of weights: ", sum(weights))
+
+  # Print the calories list
+  print("Calories: ", calories)
+
+  # Print the sum of the calories list
+  print("Sum of calories: ", sum(calories))
+
+if __name__ == "__main__":
+  main()
+import sys

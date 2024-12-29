@@ -1,0 +1,125 @@
+#!/usr/bin/python
+# ToDo: provide map for colnames -> colname abbr (e.g., protein->prot), list: code, name, wt, cal, prot, disp, vol
+#       add volume column (between name & weight)
+#       implement '-a' to compute calories & protein from given weight (amount), return string for ftrack cell
+#           ...or better yet, create a separate utility to produce computed stats from given quantity (e.g., weight -> calorie count, protein, etc.)
+#               then integrate utility as function in next revision of this script
+
+import argparse, csv, os, sys
+
+from enum import Enum
+
+# character display controls
+CtlBold     = "\033[1m"                     # turn on bold print
+CtlBoldGr   = "\033[1;32m"                  # turn on bold, green
+CtlBoldUlGr = "\033[1;4;32m"                # turn on bold, underline, green
+CtlOff      = "\033[0m"                     # return all print control to normal
+
+ColW        = [ 15, 50, 10, 10, 10, 40 ]    # display column widths (see NItems)
+CdbDataTbl  = []
+CerealDB    = "cereal-4.db"
+ColMap      = {}
+ColErrRC    = 1
+DefSortCol  = "name"
+NItems      = 6                             # number of cereal data items (columns) per line of cereal database (see ColW)
+No          = [ 'n', 'N', 'no', 'No' ]
+Only        = [ 'o', 'O', 'only', 'Only' ]
+Pgm         = os.path.basename( __file__ )
+SortUp      = 'a'
+Yes         = [ 'y', 'Y', 'yes', 'Yes' ]
+
+# fmtprt() formats a single line of {NItems} tab-separated entries into columns of {Col#w} widths
+def fmtprt( items ):
+    if( len( items ) != NItems ):
+        return "Error: data must occur in " + NItems + "-item, tab-delimited lines."
+
+    # print( ColMap )
+    fmtline = (
+        f"{items[ ColMap[ 'code' ]]:<{ColW[ ColMap[ 'code' ]]}}"
+        f"{items[ ColMap[ 'name' ]]:<{ColW[ ColMap[ 'name' ]]}}"
+        f"{items[ ColMap[ 'weight' ]]:>{ColW[ ColMap[ 'weight' ]]}}"
+        f"{items[ ColMap[ 'calories' ]]:>{ColW[ ColMap[ 'calories' ]]}}"
+        f"{items[ ColMap[ 'protein' ]]:>{ColW[ ColMap[ 'protein' ]]}}"
+        f"  {items[ ColMap[ 'display' ]]:<{ColW[ ColMap[ 'display' ]]}}"
+    )
+    return fmtline
+
+def parsecmdargs():
+    cmdargs = argparse.ArgumentParser( description = f"\033[1m{Pgm}\033[0m: display cereal database")
+    
+    cmdargs.add_argument( "-c", "--cols",  type=str,            default='y',        help="column names, on ('y', default), off ('n'), only ('o'" )
+    cmdargs.add_argument( "-k", "--key",   type=str,                                help="key character string to match" )
+    cmdargs.add_argument( "-o", "--order", type=str,            default='a',        help="order to sort in ( a: ascend, d: descend)" )
+    cmdargs.add_argument( "-r", "--rows",  type=int,            default=0,          help="row count of data to display" )
+    cmdargs.add_argument( "-s", "--sort",  type=str,            default=DefSortCol, help="sort column name" )
+
+    return cmdargs.parse_args()
+
+def main():
+    global ColMap
+    args = parsecmdargs()
+    
+    try:
+        with open( CerealDB, 'r' ) as cdb:
+            readcdb = csv.reader( cdb, delimiter='\t' )
+            
+            colnames = next( readcdb )
+            colnames = [ cdbcol.split( ' ', 1 )[ 0 ] for cdbcol in colnames ]
+            ColMap = { colname: idx for idx, colname in enumerate( colnames )}
+            colidx = ColMap[ args.sort ]
+            if args.cols in Only:
+                print( f"{CtlBoldGr} {'  '.join( colnames )} {CtlOff}" )
+                sys.exit( 0 )
+                    
+            for cerealdat in readcdb:
+                if cerealdat[ 2 ][ -1: ].isalpha():
+                    cerealdat[ 2 ] = int( cerealdat[ 2 ][ : -1 ])
+                if cerealdat[ 3 ][ -1: ].isalpha():
+                    cerealdat[ 3 ] = int( cerealdat[ 3 ][ : -1 ])
+                if cerealdat[ 4 ][ -1: ].isalpha():
+                    cerealdat[ 4 ] = float( cerealdat[ 4 ][ : -1 ])
+                CdbDataTbl.append( cerealdat )
+    except FileNotFoundError:
+        print( f"Error: cereal database '{CerealDB}' not found." )
+    except PermissionError:
+        print( f"Error: cereal database '{CerealDB}' permission problem." )
+    except IOError as err:
+        print( f"Error: failure with I/O on {CerealDB}" )
+    except Exception as err:
+        print( f"Error: unresolved error: {err}" )
+    
+    if args.cols in Yes:
+        print( f"{CtlBoldUlGr} {fmtprt( colnames )} {CtlOff}" )
+    else:
+        if args.cols not in No:
+            print( f"Error: column name printing specification must be a yes, a no, or an only." )
+            sys.exit( 1 )
+
+    if args.sort != DefSortCol:
+        if args.sort in ColMap:
+            sortcol = colidx
+        else:
+            print( f"Error: {CtlBold}{args.sort}{CtlOff} is not a valid column name.  Valid selections are: ", end='' )
+            print( *sorted( colnames ), sep=", " )
+            sys.exit( ColErrRC )
+    else:
+        sortcol = ColMap[ DefSortCol ]
+    if args.order == SortUp:
+        sord = False         # sord: sort order
+    else:
+        sord = True
+    sorted_cdb = sorted( CdbDataTbl, key=lambda row: row[ sortcol ], reverse=sord)
+    rowctr = 1
+    for row in sorted_cdb:
+        if args.key:
+
+            if not any( args.key in str( citem ) for citem in row ):
+                continue
+        if args.rows == 0 or rowctr <= args.rows:
+            print( fmtprt( row ))
+            rowctr += 1
+        else:
+            break
+
+if __name__ == "__main__":
+    main()

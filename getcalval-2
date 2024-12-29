@@ -1,0 +1,33 @@
+#!/usr/bin/python3
+"""
+acting as a python programmer, write a script to extract from a text file all the comma and space delimited text that includes both numbers and the lower case character 'c', but only numbers and the lower case character 'c'.  the script should prompt for the name of the text file if it's not supplied as an argument on the command line.
+"""
+
+import sys,re
+
+def extract_numbers_and_cs(text):
+  """Extracts all the comma and space delimited text that includes both numbers and the lower case character 'c', but only numbers and the lower case character 'c'."""
+
+  pattern = r"[0-9c]+"
+  matches = re.findall(pattern, text)
+  return matches
+
+def main():
+  """The main function."""
+
+  text_file = None
+  if len(sys.argv) == 2:
+    text_file = sys.argv[1]
+  else:
+    text_file = input("Enter the name of the text file: ")
+
+  with open(text_file, "r") as f:
+    text = f.read()
+
+  matches = extract_numbers_and_cs(text)
+
+  for match in matches:
+    print(match)
+
+if __name__ == "__main__":
+  main()

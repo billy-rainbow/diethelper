@@ -1,0 +1,15 @@
+#!/bin/bash
+
+CalDb=calct.dat
+CalLs=calct.ls
+
+if [ -z "$1" ]; then
+    printf "Item to check: "
+    read item
+    set "$item"
+fi
+
+# grep "$item" $CalDb
+for item in "$@"; do
+    $CalLs | grep "$item"
+done

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+ucode=$1
+used=$2
+DB=cereal-3.db
+
+dat=`awk "/^$ucode\t/" $DB`
+wt=`echo "$dat" | cut -f3 -d$'\t' | sed 's/g//'`
+cal=`echo "$dat" | cut -f4 -d$'\t' | sed 's/c//'`
+prot=`echo "$dat" | cut -f5 -d$'\t' | sed 's/p//'`
+disp=`echo "$dat" | cut -f6 -d$'\t'`
+
+pct=`echo "scale=3; $used / $wt" | bc`
+ucal=`echo "scale=3; $pct * $cal" | bc`
+uprot=`echo "scale=3; $pct * $prot" | bc`
+printf "used:rate %d:%.2f    std: %.0fg / %.0fc / %.1fp    cell: %s (%.1fC, %.0fg, %.0fc, %.1fp)\n" \
+       $used $pct                       $wt $cal $prot           "$disp" $pct $used $ucal $uprot 
+
+# used:rate 75:1.67    std: 45g / 158c / 5.3p    cell: 75 (263g, 9c, 0.0p)
+

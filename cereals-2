@@ -1,0 +1,166 @@
+#!/usr/bin/python
+
+Col0w = 15
+Col1w = 50
+Col2w = 5
+Col3w = 7
+Col4w = 7
+Col5w = 60
+CerealDB = "cereal-3.db"
+NItems = 6
+
+def fmtprt( items ):
+    if( len( items ) != NItems ):
+        return "Error: data must occur in " + NItems + "-item, tab-separated lines."
+
+    fmtline = (
+        f"{items[ 0 ]:<{Col0w}}"
+        f"{items[ 1 ]:<{Col1w}}"
+        f"{items[ 2 ]:>{Col2w}}"
+        f"{items[ 3 ]:>{Col3w}}"
+        f"{items[ 4 ]:>{Col4w}}"
+        f"  {items[ 5 ]:<{Col5w}}"
+    )
+    return fmtline
+
+def main():
+    try:
+        with open( CerealDB, 'r' ) as cdb:
+            for cdat in cdb:
+                items =cdat.strip().split( '\t' )
+                prtcdat = fmtprt( items )
+                print( prtcdat )
+    except FileNotFoundError:
+        print( f"Error: cereal database '{CerealDB}' not found." )
+    except Exception as err:
+        print( f"Error: unresolved error: {err}" )
+
+if __name__ == "__main__":
+    main()
+
+import argparse
+
+'''
+Perplexity
+
+def format_line(items):
+    # Ensure there are exactly 6 items
+    if len(items) != 6:
+        return "Error: Each line must contain exactly 6 items."
+    
+    # Format the first 3 items left-justified and the last 3 items right-justified
+    formatted_line = (
+        f"{items[0]:<30}"
+        f"{items[1]:<30}"
+        f"{items[2]:<30}"
+        f"{items[3]:>30}"
+        f"{items[4]:>30}"
+        f"{items[5]:>30}"
+    )
+    return formatted_line
+
+def main():
+    parser = argparse.ArgumentParser(description="Process and print tab-delimited file with sorting option.")
+    parser.add_argument('input_file', help='Path to the input file')
+    parser.add_argument('-s', '--sort', type=int, choices=range(1, 7), metavar='COLUMN', help='Column number to sort by (1-6)')
+    args = parser.parse_args()
+
+    input_file = args.input_file
+    sort_column = args.sort
+
+    try:
+        with open(input_file, 'r') as file:
+            lines = [line.strip().split('\t') for line in file]
+
+        if sort_column:
+            # Sort lines based on the specified column
+            lines.sort(key=lambda x: x[sort_column - 1])
+
+        for items in lines:
+            # Format and print the line
+            formatted_line = format_line(items)
+            print(formatted_line)
+    except FileNotFoundError:
+        print(f"Error: The file '{input_file}' was not found.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+if __name__ == "__main__":
+    main()
+'''
+
+"""
+ChatGPT
+import csv
+
+# Step 1: Read the file into memory
+filename = 'your_file.txt'
+data = []
+
+with open(filename, 'r') as file:
+    # Create a CSV reader to read tab-delimited file
+    reader = csv.reader(file, delimiter='\t')
+    
+    # Read the file row by row
+    for row in reader:
+        data.append(row)
+
+# Step 2: Sort the data based on a selected column (e.g., column index 2)
+# Note: Column indices are zero-based
+column_index = 2  # Change this to the index of the column you want to sort by
+sorted_data = sorted(data, key=lambda row: row[column_index])
+
+# Step 3: Output sorted data (optional, printing or writing to a new file)
+for row in sorted_data:
+    print(row)
+
+------------------------
+or:
+
+Example 1: Using the csv module (Standard Python library)
+
+import csv
+
+# Read the tab-delimited file
+file_path = 'your_file.txt'  # Replace with your file path
+
+with open(file_path, 'r') as file:
+    reader = csv.reader(file, delimiter='\t')
+    
+    # Skip the header row (if it exists)
+    header = next(reader)
+    
+    # Read the rows into a list and sort by a chosen column (e.g., index 1)
+    sorted_rows = sorted(reader, key=lambda row: row[1])  # Assuming you want to sort by the 2nd column
+
+# Print the sorted data, including the header
+print(header)
+for row in sorted_rows:
+    print(row)
+
+    
+Example 2: Using pandas (for easier manipulation)
+
+import pandas as pd
+
+# Read the tab-delimited file into a DataFrame
+file_path = 'your_file.txt'  # Replace with your file path
+
+df = pd.read_csv(file_path, delimiter='\t')
+
+# Sort the DataFrame by a selected column (e.g., 'column_name' or index)
+sorted_df = df.sort_values(by='column_name')  # Replace 'column_name' with the actual column name
+
+# Print the sorted DataFrame
+print(sorted_df)
+
+
+Key Differences:
+Using csv: You need to manually handle reading the file, skipping headers, and sorting the rows.
+It works well for simple cases where the dataset isn't too large.
+
+Using pandas: pandas simplifies the process of reading, sorting, and managing tabular data,
+especially when you're working with larger datasets or need more advanced functionality
+(e.g., filtering, aggregating). You can easily sort by column names or indices and get immediate
+results in a clean format.
+"""

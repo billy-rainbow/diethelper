@@ -1,0 +1,14 @@
+# for /tmp/tf5, ref: conv_ftrack_caldatprep_s1
+
+# lct=0
+# while [ $lct -lt 20 ]; do
+while read txt; do
+    # read txt
+    name=`echo "$txt" | cut -f1 -d/ | sed 's/\(^.* \).*$/\1/'`
+    vol=`echo "$txt" | cut -f1 -d/ | sed 's/^.* \(.*$\)/\1/'`
+    wt=`echo "$txt" | cut -f2 -d/ | cut -f21 -d/`
+    cal=`echo "$txt" | cut -f3 -d/ | cut -f1 -d/`
+    prot=`echo "$txt" | cut -f4 -d/ | cut -f1 -d/`
+    printf "%s : %s %s %s %s\n" "$name" "$vol" "$wt" "$cal" "$prot"
+    # lct=$(( $lct + 1 ))
+done < /tmp/tf5

@@ -1,0 +1,44 @@
+#!/usr/bin/python
+
+# Initialize empty matrix
+data = []
+
+# Prompt for user input
+print( "                        base    cal /   protein /" )
+print( "item            amount  amount  amount  amount     (space entries with tabs, 'q' to calculate & quit)" )
+while True:
+    fdata = input().split()
+    flag = fdata[ 0 ]
+    # print( "flag: ", flag[ 0 ], ",  len( fdata ) = ", len( fdata ))
+    if( len( fdata[ 0 ]) == 1 and flag == 'q' ):
+        break
+    item, amount, ref_amt, cal_ref_amt, prot_ref_amt = fdata
+    # Check if user wants to quit
+    if item == "q":
+        break
+
+    # Calculate and add derived values
+    rel_ref_amt = float( amount ) / float( ref_amt )
+    cal_ct = rel_ref_amt * float( cal_ref_amt )
+    prot_ct = rel_ref_amt * float( prot_ref_amt )
+
+    # Append data to matrix
+    data.append([ item, amount, ref_amt, cal_ref_amt, prot_ref_amt, cal_ct, prot_ct ])
+
+# Print header row
+print( "Item              Amount Ref_Amt cal/ref prot/ref cal/amt prot/amt" )
+
+# Print data rows
+for item, amount, ref_amt, cal_ref_amt, prot_ref_amt, cal_ct, prot_ct in data:
+    print(
+        f"{item:<16} {amount:>7} {ref_amt:>7} {cal_ref_amt:>7} {float( prot_ref_amt ):>8.1f} \033[1m{cal_ct:>7.0f} {float( prot_ct ):>8.1f}\033[0m"
+    )
+
+# Calculate and print totals
+total_amount = sum( float(amount) for item, amount, _, _, _, _, _ in data )
+total_cal_ct = sum( float( cal_ct ) for item, amount, _, _, _, cal_ct, _ in data )
+total_prot_ct = sum( float(prot_ct) for item, amount, _, _, _, _, prot_ct in data )
+
+print("-" * 70)
+print(f"Totals:\t\033[1m{total_amount:.0f}\t{total_cal_ct:.0f}\t{total_prot_ct:.1f}\033[0m")
+print( "\tgrams\tcals\tprotein" )

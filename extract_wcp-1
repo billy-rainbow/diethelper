@@ -1,0 +1,5 @@
+ ((while read txt; do set $txt; for item in $*; do echo "$item" | grep -q "^[(0-9]\+g,$" && printf "%s  " $item; done; echo; done < /tmp/tf | while read wt; do printf "%s + " `echo $wt | sed 's/(//g;s/g.*//'`; done; echo '0') | tee /dev/tty) | bc /.bc
+ ((while read txt; do set $txt; for item in $*; do echo "$item" | grep -q "^[0-9]\+c,$" && printf "%s  " $item; done; echo; done < /tmp/tf | while read cal; do printf "%s + " `echo $cal | sed 's/c.*//'`; done; echo '0') | tee /dev/tty) | bc /.bc
+# 387
+ ((while read txt; do set $txt; for item in $*; do echo "$item" | grep -q "^[0-9.]\+p" && printf "%s  " $item; done; echo; done < /tmp/tf | while read prot; do printf "%s + " `echo $prot | sed 's/p.*//'`; done; echo '0') | tee /dev/tty) | bc /.bc
+# 5.4

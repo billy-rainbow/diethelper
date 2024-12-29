@@ -1,0 +1,42 @@
+#!/bin/bash
+
+DB=cereal-3.db
+Pgm=`basename "$0"`
+Styp=n
+
+case "$1" in
+    code|abbr)
+        scol=5
+        Styp=''
+        ;;
+    ''|name)
+        scol=1
+        Styp=''
+        ;;
+    weight|wt)
+        scol=2
+        ;;
+    calories|cal)
+        scol=3
+        ;;
+    protein|prot)
+        scol=4
+        ;;
+    display|disp)
+        scol=6
+        ;;
+    *)
+        echo "Error: column must be code, name, display, wt, cal, or prot"
+        exit 1
+        ;;
+esac
+
+while read txt; do
+    code=`echo -e "$txt" | cut -f1 -d$'\t'`
+    name=`echo -e "$txt" | cut -f2 -d$'\t'`
+    wt=`echo -e "$txt" | cut -f3 -d$'\t' | sed 's/g//'`
+    cal=`echo -e "$txt" | cut -f4 -d$'\t' | sed 's/c//'`
+    prot=`echo -e "$txt" | cut -f5 -d$'\t' | sed 's/p//'`
+    disp=`echo -e "$txt" | cut -f6 -d$'\t'`
+    printf "%-60s\t%5s\t%5s\t%6s\t%-12s\t%-s\n" "$name" $wt $cal $prot $code "$disp"
+done < $DB | sort -t$'\t' -k${scol},${scol}$Styp

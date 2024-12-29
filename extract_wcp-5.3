@@ -1,0 +1,44 @@
+import re
+
+def extract_values(line):
+    values = re.findall(r'(\d+(\.\d+)?)[cgp]', line)
+    return [float(value[0]) for value in values]
+
+def process_file(filename):
+    with open(filename, 'r') as f:
+        lines = f.readlines()
+
+    # Combine lines with alphabetic prefixes
+    combined_lines = []
+    current_line = ""
+    for line in lines:
+        if line.strip().startswith(tuple("ABCDEFGHIJKLMNOPQRSTUVWXYZ")):
+            current_line += line.strip() + " "
+        else:
+            combined_lines.append(current_line.strip())
+            current_line = ""
+    if current_line.strip():
+        combined_lines.append(current_line.strip())
+
+    # Extract and calculate values
+    weights = []
+    calories = []
+    proteins = []
+    for line in combined_lines:
+        values = extract_values(line)
+        weights.append(values[0])
+        calories.append(values[1])
+        proteins.append(values[2])
+
+    print(f"Total Weight: {sum(weights):.2f}g")
+    print(f"Total Calories: {sum(calories):.2f}cal")
+    print(f"Total Protein: {sum(proteins):.2f}g")
+
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) > 1:
+        filename = sys.argv[1]
+        process_file(filename)
+    else:
+        print("Please provide a filename as an argument.")
+

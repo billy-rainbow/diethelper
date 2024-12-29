@@ -1,0 +1,46 @@
+#!/usr/bin/python3
+
+def extract_text(filename):
+  """Extracts all the comma and space delimited text that includes only numbers and the lower case character 'c' from a text file.
+
+  Args:
+    filename: The name of the text file to extract text from.
+
+  Returns:
+    A list of strings, where each string is a comma and space delimited word of text that includes both numbers and lower case 'c' characters.
+  """
+
+  with open(filename, "r") as f:
+    lines = f.readlines()
+
+  text = ""
+  for line in lines:
+    text += line
+
+  words = text.split(", ")
+
+  output = []
+  for word in words:
+    if word.isalnum() and "c" in word:
+      output.append(word)
+
+  return output
+
+
+def main():
+  """Prompts the user for the name of a text file and then extracts all the comma and space delimited text that includes only numbers and the lower case character 'c' from the file.
+
+  Prints the extracted text to the console.
+  """
+
+  filename = input("Enter the name of the text file: ")
+
+  text = extract_text(filename)
+
+  print("The extracted text is:")
+  for word in text:
+    print(word)
+
+
+if __name__ == "__main__":
+  main()

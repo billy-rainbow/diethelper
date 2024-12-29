@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+"""
+acting as a python programmer, write a script to split a text file into a list of  words. use spaces, commas, and close parentheses for delimiters. each word must have numbers and end with a lower case character 'c'.  each word must include nothing except numbers and the lower case character 'c'.  the script should prompt for the name of the text file if it's not supplied as an argument on the command line.
+"""
+
+import os
+import sys
+import re
+
+def split_words(text):
+  """Splits a string into a list of words, where each word is a sequence of numbers ending with a lower case character 'c'."""
+  words = re.findall(r"\d+c", text)
+  return words
+
+def main():
+  """Prompts for the name of a text file and splits it into a list of words."""
+  if len(sys.argv) == 2:
+    filename = sys.argv[1]
+  else:
+    filename = input("Enter the name of the text file: ")
+
+  with open(filename, "r") as f:
+    text = f.read()
+
+  words = split_words(text)
+
+  for word in words:
+    print(word)
+
+if __name__ == "__main__":
+  main()
+

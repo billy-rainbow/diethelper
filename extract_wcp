@@ -1,0 +1,156 @@
+#!/bin/bash
+
+LblW=12                       # Label Width
+Pgm=`basename $0`             # this program's name
+TmpF=/tmp/tf.$Pgm             # temp file for this program
+TmpFw=/tmp/tf.$Pgm.wrk        # temp work file for this program
+
+if [ "$1" = "-x" ]; then
+    set -x
+fi
+echo "Replace this line with a cut & paste of only the cell data lines to sum." > $TmpF 
+vi -c "set noai" -c "set list" $TmpF
+
+# delete blank lines
+sed -i '/^[[:space:]]*$/d' $TmpF
+
+# extract & format leading item description string
+# if the line starts with (description) text, extract all text to the delimiting '(', convert the first space to an underscore,
+#   delete anything that's an underscore followed only by spaces, and print the first $LblW (label width) characters with a '+ ' added to the end
+while read txt; do
+    if [ -n "$txt" ]; then
+        set $txt
+        if echo "$1" | grep -q "^[a-zA-Z]"; then
+            # printf "%-${LblW}s + " `echo "$txt" | cut -f1 -d'(' | sed 's/\([a-zA-Z]\) \([a-zA-Z]\)/\1_\2/g; s/_ *$//' | cut -c1-$LblW`
+            printf "%-${LblW}s + " `echo "$txt" | cut -f1 -d'(' | tr ' ' '_' | sed 's/_ *$//' | cut -c1-$LblW | sed 's/__*/_/g;s/_$//'`
+        fi
+    fi
+    done < $TmpF | sed 's/+ $//'
+echo
+
+# delete blank lines
+# then join lines that have been split with the alpha-numeric label on the first line and the data on the second
+while read txt; do
+    if [ -n "$txt" ]; then
+        set $txt
+    else
+        continue
+    fi
+    echo $*
+done < $TmpF | while read txt; do
+                   if [[ $txt =~ ^[[:alnum:]] ]]; then
+                       printf "\n%s " "$txt"
+                   else
+                       printf "%s" "$txt"
+                   fi
+                done | grep -v "^$" > $TmpFw
+mv $TmpFw $TmpF
+
+# 1st while:  extract the weight value (wt) from each line (it's an integer followed by a 'g', for "grams")
+# 2nd while:  as the weight values are found, format them with '+' delimiters so they can be fed to bc & added up
+# finally, display the string given to bc after collapsing the work file & appending bc's results following an '='
+#   ...and remembering to clean up the work file
+# 
+(
+    (
+        while read txt; do
+            set $txt
+            for item in $*; do
+                if echo "$item" | grep -q "^[(0-9]\+g,$"; then
+                    printf "%s  " $item
+                fi
+            done
+            echo
+        done < $TmpF | while read wt; do
+                           printf "%${LblW}s + " `echo $wt | sed 's/(//g;s/g.*//'`
+                       done
+                       echo '0'
+    # ) | sed 's/+ 0$//' | tr -d '\n' | tee $TmpFw
+    ) | sed 's/+ 0$//' | tee $TmpFw
+) | bc /.bc >> $TmpFw
+cat $TmpFw | sed '1{s/$/     = /}' | tr -d '\n'
+echo
+rm $TmpFw
+
+# 1st while:  extract the calorie value (cal) from each line (it's an integer followed by a 'c', for "calories")
+# 2nd while:  as the calorie values are found, format them with '+' delimiters so they can be fed to bc & added up
+# finally, display the string given to bc after collapsing the work file & appending bc's results following an '='
+#   ...and remembering to clean up the work file
+# 
+(
+    (
+        while read txt; do
+            set $txt
+            for item in $*; do
+                if echo "$item" | grep -q "^[0-9]\+c,$"; then
+                    printf "%s  " $item
+                fi
+            done
+            echo
+        done < $TmpF | while read cal; do
+                           printf "%${LblW}s + " `echo $cal | sed 's/c.*//'`
+                       done
+                       echo '0'
+    # ) | sed 's/+ 0$//' | tr -d '\n' | tee $TmpFw
+    ) | sed 's/+ 0$//' | tee $TmpFw
+) | bc /.bc >> $TmpFw
+cat $TmpFw | sed '1{s/$/     = /}' | tr -d '\n'
+echo
+rm $TmpFw
+
+# 1st while:  extract the protein value (prot) from each line (it's a float followed by a 'p', for "protein")
+# 2nd while:  as the protein values are found, format them with '+' delimiters so they can be fed to bc & added up
+# finally, display the string given to bc after collapsing the work file & appending bc's results following an '='
+#   ...and remembering to clean up the work file
+# note that 'p' is used even though the single-digit of precision values represent grams
+# 
+(
+    (
+        while read txt; do
+            set $txt
+            for item in $*; do
+                if echo "$item" | grep -q "^[0-9.]\+p[,)]$"; then
+                    printf "%s  " $item
+                fi
+            done
+            echo
+        done < $TmpF | while read prot; do
+                           printf "%${LblW}s + " `echo $prot | sed 's/p.*//'`
+                       done
+                       echo '0'
+    # ) | sed 's/+ 0$//' | tr -d '\n' | tee $TmpFw
+    ) | sed 's/+ 0$//' | tee $TmpFw
+) | bc /.bc >> $TmpFw
+cat $TmpFw | sed '1{s/$/     = /}' | tr -d '\n'
+echo
+rm $TmpFw
+
+
+### sample data 1
+# BBQ sauce      (15.5T, 244g, 153c, 2.3p, Recipe ./2)
+# 
+#     Goodles Hey Hey Elote mac 'n cheese (1pk, 146g, 520c, 28p)
+#         water                           (30T, 450g, 0c) 1T/15g/0c
+# 
+#     squid steaks       (3, 380g, 338c, 57.8p) 100g/89c/15.2p
+#     green onion             (5, 91g, 29c, 1.4p) 100g/32c/1.5p
+# 
+#     peas                 (0.6C, 102g, 84c, 4.8p) 8T/85g/70c/4p
+# 
+### sample data 2
+# Life                  (1.8C, 75g, 286c, 7.1p) 1C/42g/160c/4p
+# Honey Bunches of Oats
+#                         (1.9C, 75g, 300c, 5.1p) 1C/40g/160c/2.7p
+# Honey Nut Cheerios
+#                         (2.0C, 75g, 284c, 6.1p) 1C/37g/140c/3p
+# Cap'n Crunch   (1.8C, 70g, 276c, 3.7p) 1C/38g/150c/2p
+# Good Karma flaxmilk
+#                        (35.6T, 569g, 56c, 2.2p) 1C/256g/25c/1p
+# Chobani zero sugar vanilla Greek yogurt
+#                               (190g, 78c, 14.5p) 1C/227g/93c/17.3p
+# Hershey's dark cocoa
+#                           (4T, 20g, 40c, 4.8p) 1T/5g/10c/1.2p
+# Swerve SR       (T, 20g, 0c, 0p) 1T/14g/0c/0p
+# Hershey's zero sugar chocolate syrup
+#                         (2.0T, 30g, 10c, 0p) 1T/15g/5c/0p
+# honey              (1.4T, 30g, 89c, 0.8p) 1T/22g/65c/0.6p

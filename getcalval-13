@@ -1,0 +1,65 @@
+#!/usr/bin/python3
+"""
+Acting as a python programmer, write a script that imports the os and sys modules, then checks the command line to see if a valid filename of an existing text file has been supplied. If no filename has been specified, the script should prompt for the name of the file.  Reference all uses of "argv" as "sys.argv".  Next, using spaces, commas, and close parentheses for delimiters, split the entire file into a single list of  words. Delete all members of the list that do not end with a lower case character 'c', then delete the 'c' from each remaining member.  Delete all non-numeric members of the list.  Delete all null members of the list. Print the list on one line, prefaced with the label, "Calorie values: ". Add them all together, and print the sum prefixed with the string "Total calories: "
+"""
+
+import os
+import sys
+import re
+
+def main():
+  # Check if a filename has been specified on the command line
+  if len(sys.argv) == 1:
+    filename = input("Enter the name of the file: ")
+  else:
+    filename = sys.argv[1]
+
+  # Check if the file exists
+  if not os.path.exists(filename):
+    print("The file does not exist.")
+    return
+
+  # Open the file in read mode
+  with open(filename, "r") as f:
+    contents = f.read()
+
+  # Split the contents of the file into a list of words
+  # words = contents.split(" ")
+  words = re.split("[ ,)(]", contents)
+
+  # Remove all null words
+  for i in range(len(words)):
+    if words[i] == "":
+      del words[i]
+
+  print( "Word count: ", len( words ), "\nWords: ", words )
+
+  # Remove all words that do not end with a lower case character 'c'
+  for i in range(len(words)):
+    if not words[i].endswith("c"):
+      del words[i]
+
+  # Remove the 'c' from the end of each remaining word
+  for i in range(len(words)):
+    words[i] = words[i][:-1]
+
+  # Remove all non-numeric words
+  for i in range(len(words)):
+    try:
+      float(words[i])
+    except ValueError:
+      del words[i]
+
+  # Print the list of calories
+  print("Calorie values: ", words)
+
+  # Add all the calories together
+  total_calories = 0
+  for calorie in words:
+    total_calories += float(calorie)
+
+  # Print the total calories
+  print("Total calories: ", total_calories)
+
+if __name__ == "__main__":
+  main()

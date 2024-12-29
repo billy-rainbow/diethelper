@@ -1,0 +1,895 @@
+0.4C. : 0.4C. 100g 197c 3.7p cooked peas 8T
+100g : 100g 162c 9.5p 
+16g heavy cream  :   6g Swerve   2g cocoa El Mexicano nacho cheese sauce 4T 62g
+1C : 1C 227g 93c 17.3p
+1C : 1C 32g 112c 3.2 black plum 4040 100g
+1C : 1C 32g 112c 3.2 black plum 4042 100g
+1C : 1C 32g 112c 3.2 Life 1C
+1C : 1C 39g 150c 2g Cocoa Pebbles 1C
+1cn : 1cn 30.5T 463g 210c
+1pk : 1pk 240g 340c 7p
+1pk : 1pk 278g G Hughes sugar free ketchup 1T 16g 5c
+1T : 1T 15.4c 12g 0p
+1T : 1T 15g 40c 0 sweet pickle relish 1T
+1T : 1T 18g 8c 1.4p
+21-25ct shrimp  : 100g 84c 18.4p 
+21-25ct shrimp  : 5 85g 60c 15p
+2 : 2 3 C, 141g, 370c, 6p  
+22srv : 22srv pk 2T srv 2T 21g
+(2, 72+70, 301+292, 2.9+2.8, L3.1+L3.2, flour  : 1T 10g 34c 1p
+(2, 73+77, 309+321, 3.0+3.1, L1.1+L1.2, Kim Ve Wong soy paste  : 1T 19g 15c 1p
+(2, 77+70, 321+292, 3.1+2.8, L2.2+L2.3, G Hughes sugar free ketchup  : 1T 16g 5c 0p
+307-g pineapple juice  : 16T 240g 132c 1.0p
+3T : 3T 45g 25c 3.8p
+3T : 3T 45g 25c 3.8p 4T
+3T : 3T 45g 25c 4T 5p
+4T : 4T 28g 110c 6g peas 8T
+51-60ct shrimp  : 10 85g 50c 9p
+51g : 51g 152g peas 8T 85g 70c
+85g : 85g 218c 24p 
+ahi poke shoyu  : 85g 142c 26p 
+Akaka Falls Farms coconut black chocolate butter  : 1T 20g 90c 0.4p
+Albright's Donuts apple fritter  : 77g 170c 2.7p 
+Almond Biscuit  : 4 32g 170c 2p
+Almond Breeze unsweetened vanilla almond milk  : 1C 256g 30c 1p
+Almond Breeze unsweet vanilla almond milk  : 1C 256g 30c 1p
+apple-cinnamon rugelach  : 100g 345c 3p 
+apricot 4218  : 100g 48c 0.8p 
+apricots 4218  : 100g 48c 0.8p 
+aprium 3422  : 100g 48c 1.0p 
+apriums 3422  : 100g 48c 1.0p 
+ argparse-chatgpt-0 argparse-chatgpt-1 argparse-chatgpt-2 argparse-chatgpt-3 caladd calchk calct.dat calct.ls casetest cereal-0.0.db cereal-0.db cereal-1.db cereal-2.db cereal-3.db cereal-4.db cereal.db cerealls-0 cerealprt cereals cereals-0 cereals-1 cereals-2 cereals-3 cereals-4 cereals-5 ChatGPT-Python_file_input_and_dynamic_line_edits.txt cmdarg_colnames-1 conv_ftrack_caldatprep DeepSeek-using_Python_enums_and_mappings.docx DeepSeek-using_Python_enums_and_mappings.txt enumtest enumtest-1 ~$epSeek-using_Python_enums_and_mappings.docx extract_cp extract_wcp extract_wcp-1 extract_wcp-2 extract_wcp-3 extract_wcp-4 extract_wcp-5 extract_wcp-5.1 extract_wcp-5.2 extract_wcp-5.3 extract_wcp-5.4 fixlns ftrack-2024Dec24.csv ftrack-2024Jan01-2024Dec24-1.csv =ftrack-2024Jan01-2024Dec24-2.csv ftrack-2024Jan01-2024Dec24.csv GCV getcalval getcalval-1 getcalval-10 getcalval-11 getcalval-12 getcalval-13 getcalval-14 getcalval-15 getcalval-16 getcalval-2 getcalval-3 getcalval-4 getcalval-5 getcalval-6 getcalval-7 getcalval-8 getcalval-9 GWCV list_comp_filter-1.py list_comp_filter-2.py list_comp_filter-3.py list_comp_filter-4.py list_comp_filter_5.py list_comp_filter-6.py mcp meal-0.txt mealcalprot mealcalprot-0 mealcalprot-1 mealcalprot-2 mealcalprot.py mealprot.sh meal.txt meal.txt.out parseDE prompt.txt recipe-1.txt runbard runbard.py runmcp1 td wcp00.dat Borden Eagle fat free sweetened condensed milk  : 2T 41g 110c 4p
+ argparse-chatgpt-0 argparse-chatgpt-1 argparse-chatgpt-2 argparse-chatgpt-3 caladd calchk calct.dat calct.ls casetest cereal-0.0.db cereal-0.db cereal-1.db cereal-2.db cereal-3.db cereal-4.db cereal.db cerealls-0 cerealprt cereals cereals-0 cereals-1 cereals-2 cereals-3 cereals-4 cereals-5 ChatGPT-Python_file_input_and_dynamic_line_edits.txt cmdarg_colnames-1 conv_ftrack_caldatprep DeepSeek-using_Python_enums_and_mappings.docx DeepSeek-using_Python_enums_and_mappings.txt enumtest enumtest-1 ~$epSeek-using_Python_enums_and_mappings.docx extract_cp extract_wcp extract_wcp-1 extract_wcp-2 extract_wcp-3 extract_wcp-4 extract_wcp-5 extract_wcp-5.1 extract_wcp-5.2 extract_wcp-5.3 extract_wcp-5.4 fixlns ftrack-2024Dec24.csv ftrack-2024Jan01-2024Dec24-1.csv =ftrack-2024Jan01-2024Dec24-2.csv ftrack-2024Jan01-2024Dec24.csv GCV getcalval getcalval-1 getcalval-10 getcalval-11 getcalval-12 getcalval-13 getcalval-14 getcalval-15 getcalval-16 getcalval-2 getcalval-3 getcalval-4 getcalval-5 getcalval-6 getcalval-7 getcalval-8 getcalval-9 GWCV list_comp_filter-1.py list_comp_filter-2.py list_comp_filter-3.py list_comp_filter-4.py list_comp_filter_5.py list_comp_filter-6.py mcp meal-0.txt mealcalprot mealcalprot-0 mealcalprot-1 mealcalprot-2 mealcalprot.py mealprot.sh meal.txt meal.txt.out parseDE prompt.txt recipe-1.txt runbard runbard.py runmcp1 td wcp00.dat Guittard semi-sweet mini chcolate chips  : 1T 15g 70g 1p
+ argparse-chatgpt-0 argparse-chatgpt-1 argparse-chatgpt-2 argparse-chatgpt-3 caladd calchk calct.dat calct.ls casetest cereal-0.0.db cereal-0.db cereal-1.db cereal-2.db cereal-3.db cereal-4.db cereal.db cerealls-0 cerealprt cereals cereals-0 cereals-1 cereals-2 cereals-3 cereals-4 cereals-5 ChatGPT-Python_file_input_and_dynamic_line_edits.txt cmdarg_colnames-1 conv_ftrack_caldatprep DeepSeek-using_Python_enums_and_mappings.docx DeepSeek-using_Python_enums_and_mappings.txt enumtest enumtest-1 ~$epSeek-using_Python_enums_and_mappings.docx extract_cp extract_wcp extract_wcp-1 extract_wcp-2 extract_wcp-3 extract_wcp-4 extract_wcp-5 extract_wcp-5.1 extract_wcp-5.2 extract_wcp-5.3 extract_wcp-5.4 fixlns ftrack-2024Dec24.csv ftrack-2024Jan01-2024Dec24-1.csv =ftrack-2024Jan01-2024Dec24-2.csv ftrack-2024Jan01-2024Dec24.csv GCV getcalval getcalval-1 getcalval-10 getcalval-11 getcalval-12 getcalval-13 getcalval-14 getcalval-15 getcalval-16 getcalval-2 getcalval-3 getcalval-4 getcalval-5 getcalval-6 getcalval-7 getcalval-8 getcalval-9 GWCV list_comp_filter-1.py list_comp_filter-2.py list_comp_filter-3.py list_comp_filter-4.py list_comp_filter_5.py list_comp_filter-6.py mcp meal-0.txt mealcalprot mealcalprot-0 mealcalprot-1 mealcalprot-2 mealcalprot.py mealprot.sh meal.txt meal.txt.out parseDE prompt.txt recipe-1.txt runbard runbard.py runmcp1 td wcp00.dat Lucerne liquid egg product  : 4T 56g 30c 5p
+ argparse-chatgpt-0 argparse-chatgpt-1 argparse-chatgpt-2 argparse-chatgpt-3 caladd calchk calct.dat calct.ls casetest cereal-0.0.db cereal-0.db cereal-1.db cereal-2.db cereal-3.db cereal-4.db cereal.db cerealls-0 cerealprt cereals cereals-0 cereals-1 cereals-2 cereals-3 cereals-4 cereals-5 ChatGPT-Python_file_input_and_dynamic_line_edits.txt cmdarg_colnames-1 conv_ftrack_caldatprep DeepSeek-using_Python_enums_and_mappings.docx DeepSeek-using_Python_enums_and_mappings.txt enumtest enumtest-1 ~$epSeek-using_Python_enums_and_mappings.docx extract_cp extract_wcp extract_wcp-1 extract_wcp-2 extract_wcp-3 extract_wcp-4 extract_wcp-5 extract_wcp-5.1 extract_wcp-5.2 extract_wcp-5.3 extract_wcp-5.4 fixlns ftrack-2024Dec24.csv ftrack-2024Jan01-2024Dec24-1.csv =ftrack-2024Jan01-2024Dec24-2.csv ftrack-2024Jan01-2024Dec24.csv GCV getcalval getcalval-1 getcalval-10 getcalval-11 getcalval-12 getcalval-13 getcalval-14 getcalval-15 getcalval-16 getcalval-2 getcalval-3 getcalval-4 getcalval-5 getcalval-6 getcalval-7 getcalval-8 getcalval-9 GWCV list_comp_filter-1.py list_comp_filter-2.py list_comp_filter-3.py list_comp_filter-4.py list_comp_filter_5.py list_comp_filter-6.py mcp meal-0.txt mealcalprot mealcalprot-0 mealcalprot-1 mealcalprot-2 mealcalprot.py mealprot.sh meal.txt meal.txt.out parseDE prompt.txt recipe-1.txt runbard runbard.py runmcp1 td wcp00.dat Pillsbury dark chocolate brownie mix  argparse-chatgpt-0 argparse-chatgpt-1 argparse-chatgpt-2 argparse-chatgpt-3 caladd calchk calct.dat calct.ls casetest cereal-0.0.db cereal-0.db cereal-1.db cereal-2.db cereal-3.db cereal-4.db cereal.db cerealls-0 cerealprt cereals cereals-0 cereals-1 cereals-2 cereals-3 cereals-4 cereals-5 ChatGPT-Python_file_input_and_dynamic_line_edits.txt cmdarg_colnames-1 conv_ftrack_caldatprep DeepSeek-using_Python_enums_and_mappings.docx DeepSeek-using_Python_enums_and_mappings.txt enumtest enumtest-1 ~$epSeek-using_Python_enums_and_mappings.docx extract_cp extract_wcp extract_wcp-1 extract_wcp-2 extract_wcp-3 extract_wcp-4 extract_wcp-5 extract_wcp-5.1 extract_wcp-5.2 extract_wcp-5.3 extract_wcp-5.4 fixlns ftrack-2024Dec24.csv ftrack-2024Jan01-2024Dec24-1.csv =ftrack-2024Jan01-2024Dec24-2.csv ftrack-2024Jan01-2024Dec24.csv GCV getcalval getcalval-1 getcalval-10 getcalval-11 getcalval-12 getcalval-13 getcalval-14 getcalval-15 getcalval-16 getcalval-2 getcalval-3 getcalval-4 getcalval-5 getcalval-6 getcalval-7 getcalval-8 getcalval-9 GWCV list_comp_filter-1.py list_comp_filter-2.py list_comp_filter-3.py list_comp_filter-4.py list_comp_filter_5.py list_comp_filter-6.py mcp meal-0.txt mealcalprot mealcalprot-0 mealcalprot-1 mealcalprot-2 mealcalprot.py mealprot.sh meal.txt meal.txt.out parseDE prompt.txt recipe-1.txt runbard runbard.py runmcp1 td wcp00.dat Star extra virgin olive oil  : 1T 12g 120c 0p
+ argparse-chatgpt-0 argparse-chatgpt-1 argparse-chatgpt-2 argparse-chatgpt-3 caladd calchk calct.dat calct.ls casetest cereal-0.0.db cereal-0.db cereal-1.db cereal-2.db cereal-3.db cereal-4.db cereal.db cerealls-0 cerealprt cereals cereals-0 cereals-1 cereals-2 cereals-3 cereals-4 cereals-5 ChatGPT-Python_file_input_and_dynamic_line_edits.txt cmdarg_colnames-1 conv_ftrack_caldatprep DeepSeek-using_Python_enums_and_mappings.docx DeepSeek-using_Python_enums_and_mappings.txt enumtest enumtest-1 ~$epSeek-using_Python_enums_and_mappings.docx extract_cp extract_wcp extract_wcp-1 extract_wcp-2 extract_wcp-3 extract_wcp-4 extract_wcp-5 extract_wcp-5.1 extract_wcp-5.2 extract_wcp-5.3 extract_wcp-5.4 fixlns ftrack-2024Dec24.csv ftrack-2024Jan01-2024Dec24-1.csv =ftrack-2024Jan01-2024Dec24-2.csv ftrack-2024Jan01-2024Dec24.csv GCV getcalval getcalval-1 getcalval-10 getcalval-11 getcalval-12 getcalval-13 getcalval-14 getcalval-15 getcalval-16 getcalval-2 getcalval-3 getcalval-4 getcalval-5 getcalval-6 getcalval-7 getcalval-8 getcalval-9 GWCV list_comp_filter-1.py list_comp_filter-2.py list_comp_filter-3.py list_comp_filter-4.py list_comp_filter_5.py list_comp_filter-6.py mcp meal-0.txt mealcalprot mealcalprot-0 mealcalprot-1 mealcalprot-2 mealcalprot.py mealprot.sh meal.txt meal.txt.out parseDE prompt.txt recipe-1.txt runbard runbard.py runmcp1 td wcp00.dat Pillsbury dark chocolate brownie mix  argparse-chatgpt-0 argparse-chatgpt-1 argparse-chatgpt-2 argparse-chatgpt-3 caladd calchk calct.dat calct.ls casetest cereal-0.0.db cereal-0.db cereal-1.db cereal-2.db cereal-3.db cereal-4.db cereal.db cerealls-0 cerealprt cereals cereals-0 cereals-1 cereals-2 cereals-3 cereals-4 cereals-5 ChatGPT-Python_file_input_and_dynamic_line_edits.txt cmdarg_colnames-1 conv_ftrack_caldatprep DeepSeek-using_Python_enums_and_mappings.docx DeepSeek-using_Python_enums_and_mappings.txt enumtest enumtest-1 ~$epSeek-using_Python_enums_and_mappings.docx extract_cp extract_wcp extract_wcp-1 extract_wcp-2 extract_wcp-3 extract_wcp-4 extract_wcp-5 extract_wcp-5.1 extract_wcp-5.2 extract_wcp-5.3 extract_wcp-5.4 fixlns ftrack-2024Dec24.csv ftrack-2024Jan01-2024Dec24-1.csv =ftrack-2024Jan01-2024Dec24-2.csv ftrack-2024Jan01-2024Dec24.csv GCV getcalval getcalval-1 getcalval-10 getcalval-11 getcalval-12 getcalval-13 getcalval-14 getcalval-15 getcalval-16 getcalval-2 getcalval-3 getcalval-4 getcalval-5 getcalval-6 getcalval-7 getcalval-8 getcalval-9 GWCV list_comp_filter-1.py list_comp_filter-2.py list_comp_filter-3.py list_comp_filter-4.py list_comp_filter_5.py list_comp_filter-6.py mcp meal-0.txt mealcalprot mealcalprot-0 mealcalprot-1 mealcalprot-2 mealcalprot.py mealprot.sh meal.txt meal.txt.out parseDE prompt.txt recipe-1.txt runbard runbard.py runmcp1 td wcp00.dat xanthan gum  : 1T 9g 30c 0p
+ argparse-chatgpt-0 argparse-chatgpt-1 argparse-chatgpt-2 argparse-chatgpt-3 caladd calchk calct.dat calct.ls casetest cereal-0.0.db cereal-0.db cereal-1.db cereal-2.db cereal-3.db cereal-4.db cereal.db cerealls-0 cerealprt cereals cereals-0 cereals-1 cereals-2 cereals-3 cereals-4 cereals-5 ChatGPT-Python_file_input_and_dynamic_line_edits.txt cmdarg_colnames-1 conv_ftrack_caldatprep DeepSeek-using_Python_enums_and_mappings.docx DeepSeek-using_Python_enums_and_mappings.txt enumtest enumtest-1 ~$epSeek-using_Python_enums_and_mappings.docx extract_cp extract_wcp extract_wcp-1 extract_wcp-2 extract_wcp-3 extract_wcp-4 extract_wcp-5 extract_wcp-5.1 extract_wcp-5.2 extract_wcp-5.3 extract_wcp-5.4 fixlns ftrack-2024Dec24.csv ftrack-2024Jan01-2024Dec24-1.csv =ftrack-2024Jan01-2024Dec24-2.csv ftrack-2024Jan01-2024Dec24.csv GCV getcalval getcalval-1 getcalval-10 getcalval-11 getcalval-12 getcalval-13 getcalval-14 getcalval-15 getcalval-16 getcalval-2 getcalval-3 getcalval-4 getcalval-5 getcalval-6 getcalval-7 getcalval-8 getcalval-9 GWCV list_comp_filter-1.py list_comp_filter-2.py list_comp_filter-3.py list_comp_filter-4.py list_comp_filter_5.py list_comp_filter-6.py mcp meal-0.txt mealcalprot mealcalprot-0 mealcalprot-1 mealcalprot-2 mealcalprot.py mealprot.sh meal.txt meal.txt.out parseDE prompt.txt recipe-1.txt runbard runbard.py runmcp1 td wcp00.dat Star extra virgin olive oil  : 1T 12g 120c 0p
+ argparse-chatgpt-0 argparse-chatgpt-1 argparse-chatgpt-2 argparse-chatgpt-3 caladd calchk calct.dat calct.ls casetest cereal-0.0.db cereal-0.db cereal-1.db cereal-2.db cereal-3.db cereal-4.db cereal.db cerealls-0 cerealprt cereals cereals-0 cereals-1 cereals-2 cereals-3 cereals-4 cereals-5 ChatGPT-Python_file_input_and_dynamic_line_edits.txt cmdarg_colnames-1 conv_ftrack_caldatprep DeepSeek-using_Python_enums_and_mappings.docx DeepSeek-using_Python_enums_and_mappings.txt enumtest enumtest-1 ~$epSeek-using_Python_enums_and_mappings.docx extract_cp extract_wcp extract_wcp-1 extract_wcp-2 extract_wcp-3 extract_wcp-4 extract_wcp-5 extract_wcp-5.1 extract_wcp-5.2 extract_wcp-5.3 extract_wcp-5.4 fixlns ftrack-2024Dec24.csv ftrack-2024Jan01-2024Dec24-1.csv =ftrack-2024Jan01-2024Dec24-2.csv ftrack-2024Jan01-2024Dec24.csv GCV getcalval getcalval-1 getcalval-10 getcalval-11 getcalval-12 getcalval-13 getcalval-14 getcalval-15 getcalval-16 getcalval-2 getcalval-3 getcalval-4 getcalval-5 getcalval-6 getcalval-7 getcalval-8 getcalval-9 GWCV list_comp_filter-1.py list_comp_filter-2.py list_comp_filter-3.py list_comp_filter-4.py list_comp_filter_5.py list_comp_filter-6.py mcp meal-0.txt mealcalprot mealcalprot-0 mealcalprot-1 mealcalprot-2 mealcalprot.py mealprot.sh meal.txt meal.txt.out parseDE prompt.txt recipe-1.txt runbard runbard.py runmcp1 td wcp00.dat water  : 1T 15g 0c 0p
+asparagus  : 100g 27c 2.9p 
+A Taste of Thai peanut sauce mix  : 2T 19g 90c 3p
+Atualfo 4312  : 100g 65c 1p 
+Atualfo 4961  : 100g 65c 1p 
+Atualfo 94961  : 100g 65c 1p 
+baking powder  : 1t 4.6g 2c 0p
+baking powder  : 21t 100g 21c 0.4p
+baking soda  : 21t 100g 0c 0p
+Bamba peanut butter puffs  : 35 28g 150c 5p
+banana  : 120g 105g 1p 
+basa swai  : 112g 60c 13p 
+basil  : 1t 2g 5c 0.2p
+basmati rice  : 0.25C 45g 160c 4p
+BBQ sauce inc ribs green onion  : 100g 32c 1.5p 
+BBQ sauce Jasmine rice  : 4T 45g 160c 3p
+BBQ sauce Kinder's sugar free BBQ sauce  : 2T 30g 10c 0p
+BBQ sauce Kinder's zero sugar BBQ sauce  : 2T 30g 10c 0p
+BBQ sauce oatmeal raisin  : 1 57g 208c 3p
+beef tri-tip strips  : 100g 291c 26.7p 
+Ben & Jerry's Brownie Batter ice cream  : 1C 213g 525c 9p
+Ben & Jerry's Cherry Garcia  : 1C 212g 465c 3p
+Ben & Jerry's Half Baked ice cream  : 1C 212g 555c 9p
+Ben's Original creamy four cheese Ready Rice  : 1C 156g 220c 5p
+Best Foods spicy mayo  : 1T 15g 40c 0p
+Best Foods spicy mayo dressing  : 1T 15g 40c 0p
+Betty Crocker brownie brittle mix  : 1srv 23g 90c 0.4p
+Betty Crocker chocolate chip cookie brittle mix  : 1srv 23g 100c 1p
+big head carp  : 100g 127c 17.8p 
+blackberries  : 100g 43c 1.4p 
+black : black brown white sesame seeds 1T 9g
+black dino egg 3609  : 100g 45c 0.8p 
+black fungus  : 100g 62c 8p 
+black mission figs 4266  : 100g 74c 0.7p 
+black mission figs 4269  : 100g 74c 0.8p 
+black plum 4040  : 100g 43c 0.7p 
+black plum 4040  : 100g 45c 0.7p 
+black plum 4042  : 100g 43c 0.7p 
+black plumcot 3611  : 100g 45c 0.7p 
+black pluot 4040  : 100g 43c 0.7p 
+blanched deboned  : 100g 275c 25p 
+blanched deboned  : 100g 307c 26.1p 
+blueberries  : 100g 58c 0.7p 
+Blueberry Cobbler white flour  : 1T 10g 34c 1p
+blueberry coffee cake  : 100g 375c 7p 
+blueberry muesli  : 16T 100g 320c 8p
+Blue Bonnet  : 1T 14g 60c 0p
+Blue Bonnet  : 1T 60c  14g
+Blue Diamond Almond Breeze unsweetened vanilla almond milk  : 1C 256g 30c 1p
+Blue Diamond unsweetened vanilla almond milk  : 1C 256g 30c 1p
+Bocadin  : 1 12.5g 50c 0.4p
+Bonnie's Jams peach ginger  : 1T 16g 25c 0p
+Borden Eagle fat free sweetened condensed milk  : 2T 41g 110c 4p
+bp water green onion  : 100g 32c 1.5p 
+bp water white onion  : 100g 30c 0.7p 
+bp water yellow onion  : 100g 30c 0.7p 
+Brach's Tiny Conversation Hearts  : 1bx 28g 110c 0p
+Brer Rabbit molasses  : 1T 22g 60c 0p
+Breyers cherry vanilla ice cream  : 1C 129g 225c 3p
+Breyers chocolate ice cream  : 1C 132g 270c 3p
+Broadway fuyu  : 100g 70c 0.6p 
+Broadway orange  : 100g 47c 0.9p 
+broccoli florets  : 12T 93g 25c 3p
+broiled fish  : 84g 100c 21p 
+brookies  : 1 71g 400c 5p
+brown butter chocolate chip cookies  : 1 16g 90c 2p
+brownie  : 100g 393c 7.1p 
+brown turkey figs 4267  : 100g 75c 0.9p 
+brussels sprouts  : 100g 59c 5.4p 
+cacao nibs  : 22.2T 100g 565c 12p
+Cahootz  : 1 57g 243c 2.3p
+Campbell's chunky beef & potato soup peas  : 8T 85g 70c 4p
+canola olive oil  : 1T 15g 120c 0p
+Cap'n Crunch  : 1C 38g 150c 2p
+Cap'n Crunch EOB  : 1C 38g 150c 2p
+carrot cake bar  : 100g 326c 2.4p 
+Cary's sugar free syrup  : 2T 32g 5c 0p
+Casa de Fruta strawberry rhubarb pie  : 200g 325c 2.5p 
+Cascade Ice black raspberry Melrose feijoa  : 100g 71c 1p 
+Cascade Ice lemonade Jasmine rice  : 4T 45g 160c 3p
+Cascade Ice lemonade Life  : 1C 42g 160c 4p
+Cascade Ice strawberry lemonade Jasmine rice  : 4T 45g 160c 3p
+Cascade orange mango flour  : 1T 10g 34c 1p
+cashews  : 4T 30g 170c 5p
+Catalpa mandarin  : 88g 47c 0.7p 
+catfish  : 113g 120c 16p 
+catfish chunks  : 113g 120c 16p 
+cayenne  : 1T 5.3g 17c 0.4p
+cayenne Swerve BSR  : 1T 16g 0c 0p
+Char Siu Bao is BBQ pork bun  : 120g 225c 6p 
+Chata cochinita pibil  : 0.7cn 63g 120c 9p
+cheese sauce Jasmine rice  : 4T 45g 160c 3p
+cheesy sauce Jasmine rice  : 4T 45g 160c 3p
+cherries 4045  : 100g 77c 1.09p 
+cherries 4045  : 100g 77c 1.1p 
+cherry Airhead  : 15g 63c 0p 
+Cherry Bomb  : 100g 232c 2.8p 
+cherry chocolate  : 1 50g 235c 3.5p
+cherry pastry bites  : 40g 140c 2p 
+Chicken of the Sea smoked oysters  : 1cn 85g 150c 18p
+chili sauce Jasmine rice  : 4T 45g 160c 3p
+China sauce Jasmine rice  : 4T 45g 160c 3p
+Chinese style chicken salad  : 177g 211c 13p 
+chipotle  : 1t 3g 7c 0.2p
+Chobani blueberry zero sugar Greek yogurt  : 1 150g 60c 12p
+Chobani lemon meringue pie zero sugar Greek yogurt  : 1 150g 60c 12p
+Chobani toasted coconut vanilla 0 sugar Greek yogurt  : 1 150g 60c 12p
+Chobani zero sugar black cherry Greek yogurt  : 1C 150g 60c 12p
+Chobani zero sugar peach Greek yogurt  : 1C 150g 60c 12p
+Chobani zero sugar strawberry cheesecake Greek yogurt  : 150g 80c 12p 
+Chobani zero sugar strawberry cheesecake Greek yogurt  : 1C 150g 60c 12p
+Chobani zero sugar strawberry Greek yogurt  : 170g 70c 13p 
+Chobani zero sugar strawberry Greek yogurt  : 1C 227g 93c 17.3p
+Chobani zero sugar strawberry Greek yogurt  : 227g 93c 17.3p 
+Chobani zero sugar toasted coconut vanilla Greek yogurt  : 1C 150g 60c 12p
+Chobani zero sugar vanilla Greek yogurt  : 12T 170g 70c 13p
+Chobani zero sugar vanilla Greek yogurt  : 150g 70c 13p 
+Chobani zero sugar vanilla Greek yogurt  : 170g 70c 13p 
+Chobani zero sugar vanilla Greek yogurt  : 1C 227g 93c 17.3p
+Chobani zero sugar vanilla Greek yogurt  : 227g 93c 17.3p 
+Chobani zero sugar vanilla Greek yogurt EOC  : 1C 227g 93c 17.3p
+choc-frosted, choc cake donut  : w choc sprinkles 100g 320c 3.5p
+Chocolate & Brownie Batter Krave EOB crumbs  : 1C 41g 170c 3p
+chocolate buttermilk bar  : 100g 350c 7p 
+Chocolate Cheerios  : 1C 36g 140c 3.6p
+Chocolate Cheerios  : 1C 36g 140c 3p
+Chocolate Chex  : 1C 43g 180c 4.3p
+chocolate chip  : 1 57g 228c 3p
+chocolate chip peanut butter  : 1 57g 262c 7.4p
+chocolate cookie dip flour  : 1T 10g 34c 1p
+chocolate covered cronut  : 70g 370c 6p 
+Chocolate Dream cookie  : 42g 190c 2p 
+chocolate eclair  : 100g 280c 3.8p 
+chocolate extreme jumbo cookie  : 1 57g 234c 4p
+Chocolate Frosted Flakes  : 1C 39g 150c 2p
+chocolate ginger cookie  : 30g 116c 1.3p 
+chocolate iced french cruller  : 100g 280c 3.0p 
+Chocolate Krave  : 1C 41g 170c 3p
+chocolate old-fashioned  : 100g 220c 2.5p 
+chocolate rugelach  : 100g 500c 7.1p 
+Chocolate Strawberry Cheerios  : 1C 36g 140c 3p
+Chocolate Strawberry & Pumpkin Spice Cheerios  : 1C 36g 140c 3p
+chocolate twist  : 100g 420c 4p 
+chorrizo casera  : 100g 375c 25p 
+chow mein noodles  : 181g 395g 18p 
+chu hou sauce wu long noodle  : 1n 56g 200c 7p
+cilantro  : 1t 2g 2c 0.1p
+cilantro flakes  : 1T 2g 5c 0.1p
+cinnamon  : 1T 8g 19c 0.5p
+cinnamon apricot rugelach  : 100g 345c 3p 
+cinnamon coffee cake  : 100g 375c 7p 
+cinnamon coffee cake  : 120g 380c 4p 
+Cinnamon Toast Crunch  : 1C 41g 173c 1.2p
+CJ original Korean BBQ sauce  : 1T 19g 35c 0p
+clover honey  : 1T 22g 60c 0p
+cocktail sauce basmati rice  : 0.25C 45g 160c 4p
+cocktail sauce Jasmine rice  : 4T 45g 160c 3p
+Cocoa Pebbles  : 1C 36g 140c 2.7p
+Cocoa Pebbles Crunch'd  : 1C 36g 140c 1p
+Cocoa Puff Loaded  : w  vanilla creme 1C 42g 180c
+Cocoa Puffs Loaded  : w  vanilla creme 1C 42g 180c
+Cocoa Puffs Loaded  : w  vanilla creme EOB+ 1C 42g 180c
+Cocoa Puffs Loaded  : w  vanilla creme EOB crumbs 1C 42g 180c
+coconut flour  : 2T 15g 60c 2p
+coconut macaroon  : 1 46g 198c 1.3p
+coco-peanut sauce Jasmine rice  : 4T 45g 160c 3p
+coco-peanut sauce; Signature Select lite coconut milk  : 1C 256g 150c 0p
+cod  : 100g 165c 20.4p 
+Combine all ingredients except syrup Malt 'o Meal S'mores  : 1C 40g 160c 1p
+concentrate tamarind paste  : 1T 10g 10c 0p
+coriander  : 1t 2g 6c 0.3p
+cornbread cherries 4045  : 100g 77c 1.09p 
+Corn Flakes  : 1C 28g 100c 2p
+cornmeal  : 4T 30g 110c 2p
+corn starch  : 1t 8g 30c 0p
+Count Chocula  : 1C 36g 140c 2p
+country style boneless pork ribs  : 113g 175c 22.5p 
+Cover with chocolate paste Hershey's Special Dark cocoa  : 1T 5g 10c 1.2p
+cranberry chocolate chip  : 1 57g 243c 4.3p
+cream of tartar  : 1t 3g 8c 0p
+cream of tartar  : 1t 48g 0p 
+Crispix  : 1C 29g 113c 2.3p
+Crumbl  : 1C 27g 100c 2p
+crushed red pepper  : 1t 1.8g 5.7c 0.2p
+cumin  : 1T 5g 5c 0.1 cayenne 1T
+cumin  : 1T 5g 5c 0.1 crushed red pepper 1t
+cumin  : 1T 5g 5c 0.1 tumeric 10g
+Dannon Light+Fit banana cream Greek yogurt  : 1C 150g 80c 12p
+Dannon Light+Fit caramel apple pie yogurt  : 1C 150g 80c 12p
+Dannon Light+Fit creme brulee Greek yogurt  : 1C 150g 80c 12p
+Dannon Light+Fit Greek banana cream yogurt  : 1C 150g 80c 12p
+Dannon Light+Fit Greek caramel apple pie yogurt  : 1C 150g 80c 12p
+Dannon Light+Fit Greek strawberry banana yogurt  : 1C 150g 80c 12p
+Dannon Light+Fit Greek strawberry cheesecake yogurt  : 1C 150g 80c 12p
+Dannon Light+Fit Greek toasted coconut vanilla yogurt  : 1C 150g 80c 12p
+Dannon Light+Fit strawberry cheesecake Greek yogurt  : 1C 150g 80c 12p
+Dannon Light+Fit vanilla Greek yogurt  : 1C 150g 80c 12p
+Dannon Light+Fit vanilla Greek yogurt  : 1C 150g 90c 12p
+dark chocolate brownie  : 100g 410c 3p 
+dark chocolate dipped coconut macaroon  : 46g 198c 1.3p 
+dark sweet cherries  : 20 138g 90c 1p
+dino egg 3278  : 100g 45c 0.7p 
+dino egg 3609  : 100g 45c 0.8p 
+dino pluot 3609  : 100g 45c 0.8p 
+dino pluot 3811  : 100g 60c 1.5p 
++ dipped in choc  : 1T 15g 70c 3p
+DIY brownie G Hughes sugar free ketchup  : 1T 16g 5c 0p
+DIY brownie home made ganache  : 180g 719c 0p 
+DIY brownie Swerve CSR  : 1T 12g 0c 0p
+DJ's Mini Market chocolate brownie  : 100g 410c 3p 
+Don-Bei black eye beans noodles  : 1.7n 100g 365c 17p
+doritos tortillas de maiz  : 3 45g 100c 2p
+Double Chocolate Brownie Batter Krave  : 1C 41g 170c 3p
+Dreyer's reduced fat cookie dough ice cream  : 0.67C 82g 170c 3p
+Dreyer's Triple Fudge Brownie ice cream  : 0.67C 86g 200c 3p
+dried minced onion  : 1T 5g 17c 0.5p
+Dr Midnight  : 1 57g 234c 4.6p
+Dr Midnight  : 1 57g 234c p cherries 4045 100g
+dulce de leche cookie  : 110g 570c 6.5p 
+Dunlop Donuts Samoa raised  : 130g 400c 4.5p 
+Dynasty Chinese-style mustard  : 1t 5g 10c 0p
+eel packing inc in eel green onion  : 100g 32c 1.5p 
+Egg Beaters original liquid egg subst  : 1e 4T 60g 33.3c
+Egg Beaters original liquid egg substitute  : 4T 5p 1e 3T 45g
+Elf on the Shelf  : 1C 27g 93c 1.3p
+El Mexicano nacho cheese sauce  : 4T 62g 80c 1p
+esquites sauce Jasmine rice  : 4T 45g 160c 3p
+European balena & chockie  : 4 32g 170c 2p
+European coco fleur cookie  : 4 32g 170c 2p
+European divina & neapolitaner  : 4 32g 170c 2p
+European divina & neapolitaner & almond biscuit  : 4 32g 170c 2p
+European horse head biscuit  : 4 32g 170c 2p
+European horse head biscuit & balena  : 4 32g 170c 2p
+Faraon chipotle peppers en salsa adobo  : 4T 30g 10c 0p
+Favorite Day sugar free original syrup  : 2T 16g 15c 0p
+Favorite Day sugar free original syrup  : 2T 32g 15c 0p
+Fiber One  : 1C 60g 135c 4.5p
+Fiber One chocolate fudge brownie  : 1 25g 70c 2p
+Fiber One cinnamon coffee cake bar  : 1 25g 70c 2p
+Fiber One flakes  : w  honey clusters 1C 54g 170c
+Fiber One flakes  : w  honey clusters EOB 1C 54g 170c
+Fiber One soft-baked cinnamon coffee cake bar  : 1 25g 70c 2p
+five spices powder  : 1t 2.3g 6.5c 0.2p
+five spices powder  : 1t 2.3g 6.5c p 100g
+Flavor Farmer Sierra Honey plums  : 151g 70c 1p 
+flax seeds  : 3T 28g 140c 5p
+flour  : 1T 10g 33c 1.2p
+flour  : 1T 10g 34c 1p
+flour  : 4T 30g 110c 3p
+found oranges  : 100g 53c 0.8p 
+french toast toast  : 1sl 175g 11p 
+Frog Hollow Farms mini apricots  : 100g 48c 0.8p 
+Frosted mini wheats  : 1C 60g 210c 5p
+Frosted mini wheats EOB+  : 1C 60g 210c 5p
+Frosted mini wheats EOB crumbs  : 1C 60g 210c 5p
+frozen corn  : 8T 85g 90c 3p
+FUD queso Oaxaca  : 4T 28g 90c 6p
+Fud queso oaxaqueno  : 4T 28g 90c 6p
+fuyu 4428  : 100g 70c 0.6p 
+galleta dulce de leche  : 110g 570c 6.5p 
+garlic salt  : 1t 3.6g 4c 0.1p
+garlic salt  : 1t 5g 5c 0.4p
+g : g c p flour 1T 10g
+g : g c p Lucky Charms S'mores 1C 37g
+g : g c p pineapple juice 16T 240g
+Ghirardelli dark chocolate brownie mix 18srv  :   1 bx   567g 32g 140c
+Ghirardelli semii-sweet chocolate chips  : 1T 15g 70c 0.4p
+Ghirardelli semi-sweet chocolate chips  : 33 1T 15g 70c
+Ghirardelli triple fudge brownie mix  : 1bx 16srv 538g 2080c
+Ghirardelli Ultimate Chocolate premium brownie mix  : 1srv 34g 130c 1p
+G Hughes sugar free Carolina style BBQ sauce  : 2T 28g 5c 0p
+G Hughes sugar free Carolina style sweet heat BBQ  : 1T 14g 5c 0p
+G Hughes sugar free hickory BBQ sauce  : 1T 16g 5c 0p
+G Hughes sugar free hickory BBQ sauce  : 2T 28g 5c 0p
+G Hughes sugar free hickory BBQ sauce  : 2T 30g 10c 0p
+G Hughes sugar free ketchup  : 1T 14g 5c 0p
+G Hughes sugar free ketchup  : 1T 15g 5c 0p
+G Hughes sugar free ketchup  : 1T 16g 5c 0.1p
+G Hughes sugar free ketchup  : 1t 16g 5c 0p
+G Hughes sugar free ketchup  : 1T 16g 5c 0p
+G Hughes sugar free ketchup  : 1T 16g 5C 0p
+G Hughes sugar free ketchup cayenne  : 1T 5.3g 17c 0.4p
+G Hughes sugar free sweet & spicy BBQ sauce  : 2T 28g 5c 0p
+G Hughes sugar free sweet & spicy BBQ sauce  : 2T 30g 10c 0p
+G Hughes Sweet & Spicy BBQ sauce  : 2T 30g 10c 0p
+Gimbal's Sour Lovers  : 11 40g 140c 0p
+ginger powder  : 1t 1.8g 4c 0.1p
+glaze blueberries  : 100g 58c 0.7p 
+glaze kumquats  : 100g 71c 1.3p 
+glaze more choc, add vanilla ext Swerve CSR  : 1T 12g 0c 0p
+glaze peach 4044  : 100g 39c 0.9p 
+glaze Swerve CSR  : 1T 12g 0c 0p
+gluten-free flour  : 4T 30g 100c 1p
+gochujang sauce Jasmine rice  : 4T 45g 160c 3p
+Good Good strawberry jam  : 1T 20g 5c 0p
+Good Karma flaxmilk  : 16T 256g 25c 1p
+Good Karma flaxmilk  : 1C 256g 25c 1p
+Grain Berry Multi-Bran Flakes  : 1C 32g 112c 3.2p
+grapefruit 4288  : 100g 43c 0.8p 
+grapefruit 4289  : 100g 43c 0.8p 
+grapefruit 4495  : 100g 43c 0.8p 
+Grape Nuts Flakes  : 1C 43g 150c 4p
+green onion  : 100g 32c 1.5p 
+green onions  : 100g 32c 1.5p 
+GreenWise regular instant oatmeal  : 1pk 28g 100c 4p
+ground chipotle  : 1t 3g 7c 0.2p
+ground ginger  : 1t 1.8g 6c 0.2p
+Guittard semisweet chocolate chips  : 1T 15g 70c 0.4p
+Guittard semisweet chocolate chips  : 1T 15g 70c 0.5p
+Guittard semisweet chocolate chips  : 1T 15g 70c 0p
+HanAsia ginger honey tea  : 1T 20g 55c 0p
+HanAsia hot pepper paste  : 1T 20g 20c 1p
+HanAsia Korean BBQ sauce  : 1T 18g 30c 1p
+Harbor High anjou pear  : 100g 57c 0.5p 
+Harbor High anjou pears  : 100g 57c 0.5p 
+Harbor High fuyu  : 100g 70c 0.6p 
+Harbor High fuyus  : 100g 70c 0.6p 
+Hart condensed tomato soup  : 8T 125g 80c 2p
+Heath toffee bits  : 1T 15g 80c 0p
+Heinz 57 sauce  : 1T 17g 20c 0p
+HemiS'moroid  : 330g 1339c 4.7p 
+HemiS'moroid  : 370g 1513c 5.3p 
+Hemi-S'moroid Hart condensed tomato soup  : 8T 125g 80c 2p
+HemiS'moroid Quaker quick oats  : 8T 40g 150c 5p
+Hershey's cinnamon flavored chips  : 1T 15g 80c 1p
+Hershey's cinnamon-flavored chips  : 1T 15g 80c 1p
+Hershey's Classic Caramels fat free sundae syrup  : 2T 40g 100c 0p
+Hershey's dark chocolate lava cake kisses  : 6pc 28g 120c 1p
+Hershey's dark chocolate mini egg  : 7 39g 180c 2p
+Hershey's dark cocoa  : 1T 5g 10c 1.2p
+Hershey's sp dark cocoa  : 1T 5g 10c 0.2p
+Hershey's Special Dark  : 5bk 38g 180c 2p
+Hershey's Special dark cocoa  : 1T 5g 10c 1.2p
+Hershey's Special Dark cocoa  : 1T 5g 10c1.2p 
+Hershey's white cream  : w  sprinkles & popping candy 1br 12bk 42g
+Hershey's zero sugar chocolate syrup  : 1T 15g 5c 0p
+homade ganache  : 1T 16g 65c 0p
+home made curry gravy  : 1T 17g 11c 0.3p
+home made ganache  : 180g 719c 0p 
+home made Ghirardelli dark chocolate brownie,  : 1 38g 180c 3p
+home made plum jam  : 100g 192c 0.5p 
+honey  : 1T 22g 60c 0.1p
+honey  : 1T 22g 60c 0.6p
+honey  : 1T 22g 65c 0.6p
+Honey Bunches of Oats  : 1C 40g 160c 2.7p
+Honey Nut Cheerios  : 1C 37g 140c 3p
+Hot Fudge Sundae Pop-Tart  : 2 96g 370c 4p
+hot Italian style sausage  : 1 50g 157c 10.8p
+Hot Kid ball cake cookies  : 24g 90c 0p 
+Ibarra hot chocolate  : 0.25bk 22g 100c 1p
+iced pumpkin cookie  : 38g 130c 1.3p 
+If thickening, make slurry separately, or add to cold sauce mix. Lucky Charms S'mores  : 1C 37g 140c 2p
+imitation vanilla flavor  : 1t 4.2g 10c 0p
+iodized salt  : 19t 100g 0c 0p
+Jasmine rice  : 4T 45g 160c 3p
+Jet-Puffed mini marshmallows  : 0.67C 30g 100c 0p
+Jet-Puffed mini marshmallows  : 0.7C 30g 100c 0p
+Kashi Go Chocolate Crunch  : 1C 69g 267c 13.3p
+Kashi Go Chocolate Crunch EOB  : 1C 69g 267c 13.3p
+Kashi Island Vanilla  : 0.7C 59g 200c 7p
+Kashi Island Vanilla  : 29b 0.7C 59g 200c
+Kerry's Kreations chocolate ginger cookie  : 100g 165c 5p 
+Kimbo dried chow mein noodle  : 1n 55g 272c 9p
+Kimbo roasted eel  : 1cn 100g 250c 17p
+Kimlan soy paste  : 1T 15g 10c 1.2p
+Kimlan soy paste  : 1T 19g 10c 0.4p
+Kimlan soy paste  : 1T 19g 10c 0.9p
+Kim Ve Wong soy paste  : 1T 19g 10c 0.9p
+Kim Ve Wong soy paste  : 1T 19g 15c 0.4p
+Kim Ve Wong soy paste  : 1T 19g 15c 1p
+Kinder original  : 1T 17g 30c 0p
+Kinder's sugar free Carolina style BBQ sauce  : 2T 28g 5c 0p
+Kinder's zero sugar BBQ sauce  : 2T 30g 10c 0p
+Kinder XXX  : 1T 17g 30c 0p
+King pastry flour  : 1T 10g 34c 1p
+KitKat  : 1C 39g 170c 3p
+Kodiak dark chocolate flapjack & waffle mix  : 4.3T 50g 180c 12p
+Kong Yen rice vinegar  : 1T 15g 2c 0p
+Koon Chun barbecue sauce  : 2T 38g 100c 2p
+Koon Chun BBQ sauce  : 1T 16g 17c 0.8p
+Koon Chung Sauce Factory bean sauce  : 1T 16g 23c 1p
+Korean BBQ sauce Jasmine rice  : 4T 45g 160c 3p
+krab  : 100g 102c 18.5p 
+krab  : 85g 80c 6p 
+Krusteaz Belgian waffle mix  : 5.3T 39g 140c 3p
+kumquats  : 100g 71c 1.3p 
+La Fonda feijoa  : 100g 71c 1p 
+laksa sauce basmati rice  : 0.25C 45g 160c 4p
+La Lechera dulce de leche  : 2T 39g 120c 2p
+La Lechonera naranja agria  : 1T 15g 0c 0p
+Langers pineapple juice  : 16T 240g 130c 0p
+Laoganma hot chili sauce td  : 2T 30g 210c 2p
+Lee Kum Kee chu hou paste  : 1T 18g 35c 1p
+Lee Kum Kee Korean BBQ sauce  :  27g 45c 0.6p
+Lee Kum Kee Sichuan spicy noodle sauce  : 4T 72g 160c 5p
+Lee spicy crab paste  : 1T 15g 25c 0.4p
+Lee spicy crab paste  : 1T 15g 25c p
+leftover from above used with added G Hughes sugar free ketchup  : 1T 16g 5c 0.1p
+lemon bar  : 100g 357c 7.1p 
+lemon drop  : 1 57g 234c 4.1p
+lemon extract peach 4044  : 100g 39c 0.9p 
+lemon juice  : 1T 15g 0c 0p
+Life  : 1C 42g 160c 4p
+Life EOB  : 1C 42g 160c 4p
+Light+Fit vanilla Greek yogurt  : 170g 90c 14p 
+Lilly's chocolate rugelach  : 1 28g 110c 1p
+Lindor dark  : 3 36g 230c 2p
+Lucerme liquid egg product  : 4T 56g 30c 5p
+Lucerne chocolate whippd topping  : 2T 5g 15c 0p
+Lucerne chocolate whipped topping  : 2T 5g 15c 0p
+Lucerne light nonfat vanilla yogurt  : 12T 170g 90c 6p
+Lucerne liquid egg product  : 4T 56g 30c 5p
+Lucerne liquid egg product  : 4T 5p 1e 3T 45g
+Lucerne unsalted butter  : 1T 14g 100c 0p
+Lucky Charms Chocolatey Chocolate  : 1C 36g 140c 2p
+Lucky Charms S'mores  : 1C 37g 140c 2p
+Lucky Foods Seoul gochujan  : 1T 15g 35c 1p
+Lucky Foods Seoul gochujang  : 1T 15g 35c 1p
+Malt-o-Meal  : 3T 35g 130c 4p
+Malt 'o Meal S'mores  : 1C 40g 160c 1p
+Maple Grove Farms sugar free butter flavor syrup  : 2T 32g 10c 0p
+Maple Grove Farms sugar free original syrup  : 2T 32g 10c 0p
+Maple Grove Farms sugar free original syrup  : 2T 32g 5c 0p
+maple syrup  : 1T 15g 52c 0p
+Mariani Family dried blueberries  : 4T 40g 150c 0p
+Mariani Family dried cherries  : 4T 40g 130c 1p
+marjoram  : 1t 2g 5c 0.2p
+Marnell fuyu  : 100g 70c 0.6p 
+Marnell St fuyu  : 100g 70c 0.6p 
+marshmallow iced dbl cocolate cookie chow fun noodles  : 170g 350c 12.5p 
+Masagana tamarind soup base  : 1t 2.5g 5c 0p
+Melrose feijoa  : 100g 71c 1p 
+minced garlic  : 1T 20g 15c 0p
+minced garlic  : 1T 20g 20c 0.2p
+Minute tapioca  : 1.5t 6g 20c 0p
+Mission corn tortilla  : 4 43g 90c 2p
+Mission corn tortillas  : 4 43g 90c 2p
+Mission Creamery mini pecan pie flour  : 1T 10g 34c 1p
+Mitsukan mirin  : 1T 15g 45c 0p
+Mizkan mirin  : 1T 15g 45c 0p
+Mizkan mirin  : 1T 20g 45c 0p
+Mizoh rice crackers  : 30g 110c 2p 
+Mizuh rice crackers  : 30g 110c 2p 
+M&M peanuts Fun Size  : 18g 90c 2.0p 
+M&M's minis  : 1C 31g 160c 3p
+mochi donut  : w  chocolate icing 100g 369c 6p
+mochi donut  : w  chocolate icing & Cocoa Crispies 100g 369c 6p
+Mouth Off chocolate  : 1C 35g 130c 8p
+mung bean sprouts  : 100g 30c 4p 
+MV Delights lemon shortbread cookies  : 38g 210c 1p 
+MV Delights lemon shortbread cookies  : 75g 140c 3.5p 
+Nabisco Honey Maid graham crackers  : 8 31g 130c 2p
+Nature's Bakery brownies  : 1pk 2 45g 170c
+Nature's Path Flax Plus multibran flakes  : 1C 40g 150c 5p
+Nature's Path Heritage flakes  : 1C 40g 150c 5p
+nectarine 4036  : 100g 44c 1.1p 
+nectarine 4378  : 100 39c 0.9p 
+nectarine 4378  : 100g 31c 0.7p 
+nectarine 4378  : 100g 39c 0.9p 
+nectarine 4378  : 100g 44c 1.1p 
+nectarine 94378  : 100g 44c 1.1p 
+neighborhood oranges  : 88g 47c 0.7p 
+Nestle hot cocoa & marshmallow flavored morsels  : 1T 14g 70c 0p
+Nestle La Lechera sweetened condensed milk  : 2T 39g 130c 3p
+Nestle Toll House pumpkin spice filled baking truffles  : 1T 14g 80c 0p
+Nestle zero added sugar hot cocoa mix  : 2T 8g 25c 0.3p
+Nice Choice noodle cookie Taiwan desert  : 1 38g 180c 3p
+Nick's Cherry Choka-Flaka Swedish-style light ice cream  : 0.67C 95g 100c 4p
+noodles catfish  : 113g 120c 16p 
+noodles squid steaks  : 100g 89c 15.2p 
+nutmeg  : 1t 2.2g 12c 0.1p
+oatmeal chocolate chip  : 1 56g 230c 5.1p
+Ocean Kist eel chuncks  : 100g 81c 17.7p 
+Ocean Spray dried cranberries  : w  cherry 4T 40g 130c
+O'Food gochujang  : 1t 5g 10c 0.1p
+O'Food gochujang  : 1t 5g 10 Sambal Oelek chili paste 1T 20g
+OFood gochujang marinade  : 1T 19g 40c 0.4p
+Oikos Triple Zero banana creme yogurt  : C 150g 90c 15p
+Ojai Pixie mandarin  : 100g 53c 0.8p 
+okra  : 100g 33c 1.9p 
+Olipop classic root beer Harbor High anjou pear  : 100g 57c 0.5p 
+Olipop ginger lemon blueberries  : 100g 58c 0.7p 
+olive oil  : 1t 6g 40c 0p
+onion powder  : 1t 2.4g 8.2c 0.1p
+onion powder  : 1T 6.9g 18c 0.3p
+O Organics sweetened condensed milk  : 2T 38g 130c 3p
+Open Nature almond milk  : 1C 256g 30c 1p
+Open Nature unsweet almond milk  : 1C 256g 30c 1p
+Open Nature unsweetened vanilla almond milk  : 1C 256g 30c 1p
+Open Nature unsweet vanilla almond milk  : 16T 256g 30c 1p
+Open Nature unsweet vanilla almond milk  : 1C 256g 30c 1p
+orange chicken  : 252g 660c 36p 
+orange extract  : 1t 1g 0c 0p
+orange sponge roll flour  : 1T 10g 34c 1p
+oregano  : 1t 2g 6c 0.2p
+Oreo O's  : 1C 30g 120c 1p
+Pacheco St orange  : 100g 53c 0.8p 
+Pacific Cookie Company Cherry Bomb  : 100g 232c 2.8p 
+Pacific Cookie Company coconut macaroon  : 1 36g 166c 1.1p
+Pacific Cookie Company Dr Midnight  : 1 57g 234c 4.6p
+Pacific Cookie Company lemon drop  : 1 57g 234c 4.1p
+Pacific Pearl smoked oysters  : 1cn 17, 85g 150c 18p
+Pacific Pearl smoked oysters  : 1cn 85g 150c 18p
+Pacific Thai sweet potato soup  : 1T 15g 6.9c 0.1p
+packing 101g, salmon  : 330g cn peas 8T 85g 70c
+packing 80g, salmon  : 325g cn peas 8T 85g 70c
+Pad Thai sauce Jasmine rice  : 4T 45g 160c 3p
+pancake batter Cocoa Pebbles  : 1C 36g 140c 2.7p
+pancake batter honey  : 1T 22g 65c 0.6p
+pancake batter Life  : 1C 42g 160c 4p
+Panda Express butterfly shrimp  : 100g 343c 12.6p 
+paprika  : 1t 2.3g 6c 0p
+Park Way plums  : 100g 46c 0.7p 
+Parnell fuyu  : 100g 70c 0.6p 
+Parnell white grapefruit  : 100g 43c 0.8p 
+Pasta Roni 4 cheese corkscrew pasta mac mix  : 1bx 170g 525c 18p
+PB Fit chocolate peanut butter powder  : 2T 16g 70g 5p
+PB Fit peanut butter powder  : 2T 16g 70c 9p
+pb water  : 1T 15g 0c 0p
+pb water catfish  : 100g 105c 19.2p 
+peach 4038  : 100g 39c 0.9p 
+peach 4044  : 100g 39c 0.9p 
+peach 4401  : 100g 39c 0.9p 
+peach chunks  : 100g 39c 0.9p 
+Peach Cobbler white flour  : 1T 10g 34c 1p
+peach marionberry pie  : 1sl 142g 450c 4p
+peanut butter spread black plumcot 3611  : 100g 45c 0.7p 
+peanut butter spread nectarine 4036  : 100g 44c 1.1p 
+peanut butter spread nectarine 94378  : 100g 44c 1.1p 
+peanut butter spread PB Fit peanut butter powder  : 2T 16g 70c 9p
+peanut butter spread peach 4044  : 100g 39c 0.9p 
+peanut butter spread raspberry apricots  : 100g 60c 1.2p 
+peanut butter spread  : T g c 0p
+peas  : 8T 85g 70c 4p
+pecan butter crunch  : 50g 120c 2p 
+pecan buttercrunch  : 50g 120c 2p 
+pecan cherry chocolate  : 1 50g 235c 3.5p
+Peeps  : 1C 29g 113c 1.5p
+Peeps EOB  : 1C 29g 113c 1.5p
+Peeps marshmallow cereal  : 1C 29g 113c 1.5p
+Pescavore ahi jerky  : 1pk 43g 120c 14p
+pineapple chunks  : 140g 80c 0p 
+pineapple chunks  : 8T 123g 110c 0p
+pineapple juice  : 16T 240g 132c 1.0p
+pineapple mini moon cake  : 1 50g 285c 9p
+pineapple slices  : 122g 70c 0p 
+pineapple syrup  : 7T 160g 81c 0.8p
+pink grapefruit 4285  : 100g 43c 0.8p 
+pink grapefruit 94288  : 100g 43c 0.8p 
+Pleasant orange  : 100g 47c 0.9p 
+plum 4042  : 100g 43c 0.7p 
+pluot 3609  : 100g 45c 0.8p 
+pomelo 3129  : 100g 38c 0.7p 
+popcorn cheese  : 2T 15g 70c 2.5p
+popcorn cheese  : 2T 15g 70c 3p
+pork ribs green onion  : 100g 32c 1.5p 
+pork shoulder country style boneless ribs  : 100g 240c 27p 
+pork strips  : 100g 163c 22p 
+pork tamale  : 150g 250c 11p 
+pork tamales  : 150g 250c 11p 
+Por Kwan concentrate cooking tamarind  : 1T 19g 10c 0p
+Por Kwan concentrate cooking tamarind  : 1T 19g 10C 0p
+Por Kwan concentrated cooking tamarind  : 1T 10g 10c 0p
+Post Shredded Wheat  : 1C 45g 158c 5.3p
+Post Shredded Wheat EOB + Signature Select  : 1C 45g 158c 5.3p
+Prizm's dark chocolate coconut bon-bon  : 20g 80c 0p 
+Prizm's dark chocolate orange truffle  : 100g 454c 4.2p 
+Prizm's Martha Washington truffle  : 100g 360c 3p 
+Prizm's marzipan truffle  : 100g 399c 4.4p 
+Prizm's peanut butter truffle  : 100g 398c 7.4p 
+Progresso beef pot roast  : w  country vegetables soup peas 8T 85g 70c
+pumkin chcolate chip muffin  : g c p Safeway brownie 100g 360c
+pumpkin cookie  : 38g 130c 1.3p 
+pumpkin seeds  : 4T 28g 151c 7p
+Pumpkin Spice Cheerios  : 1C 36g 140c 3p
+Pumpkin Spice Special K EOB  : 1C 41g 150c 3p
+Quaker apple & cinnamon instant oats  : 1pk 45g 160c 4p
+Quaker iinstant cinnamon & spice oatmeal  : 1pk 43g 160c 4p
+Quaker iinstant maple & brown sugar oatmeal  : 1pk 43g 160c 4p
+Quaker maple & brown sugar instant oats  : 1pk 43g 160c 4p
+Quaker old fashioned oats  : 8T 40g 150c 5p
+Quaker quick 1-minute oatmeal  : 8T 40g 150c 5p
+Quaker quick oats  : 8T 40g 150c 5p
+Quest chocolate peanut butter Hero Protein bar Atualfo 4312  : 100g 65c 1p 
+Ranier cherries 4258  : 100g 50c 1p 
+raspberries  : 100g 52c 1.2p 
+raspberry apricot  : 100g 60c 1.2p 
+raspberry apricots  : 100g 60c 1.2p 
+red curry sauce Jasmine rice  : 4T 45g 160c 3p
+Reddi Wip fat free whipped cream  : 2T 5g 5c 0p
+Reddi Wip fat free whipped topping  : 2T 5g 5c 0p
+red plum 4040  : 100g 43c 0.7p 
+red velvet plum 3229  : 100g 60c 0.7 apricot 4218 100g 48c
+red velvet plum 3229  : 100g 60c 0.7 black plumcot 3611 100g 45c
+red velvet plum 3229  : 100g 60c 0.7 cherries 4045 100g 77c
+red velvet plum 3229  : 100g 60c 0.7 grapefruit 4495 100g 43c
+red velvet plum 3229  : 100g 60c 0.7 nectarine 4378 100 39c
+red velvet plum 3229  : 100g 60c 0.7 peach 4044 100g 39c
+Reeses Puffs  : 1C 39g 160c 3p
+Refreshe berry lemonade black plumcot 3611  : 100g 45c 0.7p 
+Refreshe cherry limeade flour  : 1T 10g 34c 1p
+Refreshe classic lemonade blueberries  : 100g 58c 0.7p 
+Refreshe coconut pineapple Jasmine rice  : 4T 45g 160c 3p
+Refreshe fruit punch Cap'n Crunch  : 1C 38g 150c 2p
+Refreshe grape raspberry blueberries  : 100g 58c 0.7p 
+Refreshe iced tea & lemonade flour  : 1T 10g 34c 1p
+Refreshe lemon lime Jasmine rice  : 4T 45g 160c 3p
+Refreshe orange mango black plumcot 3611  : 100g 45c 0.7p 
+Refreshe peach nectarine Park Way plums  : 100g 46c 0.7p 
+rex sole  : 100g 80c 18p 
+Rice a Roni cheddar broccoli  : 1srv 56g 210c 6p
+Rice a Roni mexican style  : 1srv 56g 190c 6p
+Rice a Roni stir fry  : 1srv 56g 180c 5p
+rice starch  : 1t 8g 30c 0p
+Ricolin Bocadin  : 4 50g 200c 1.0p
+rockfish  : 100g 109c 22.2p 
+rockfish  : 100g 180c 21p 
+Roxas St orange  : 100g 53c 0.8p 
+Roxy unsweetened coconut powder  : 10g 70c 1p 
+Rudolf the Red-Nosed Reindeer  : 1C 37g 140c 2p
+Rudolph the Red-Nosed Reindeer hot cocoa cereal  : 1C 37g 140c 2p
+Sachima Taiwan cake noodle cookie  : 40g 160c 4p 
+Safeway Bakery Black Forest pudding ring  : 1srv 61g 220c 2p
+Safeway bakery caramel brownie cheesecake  : 100g 450c 6.6p 
+Safeway bakery chocolate extreme jumbo cookie  : 1 57g 234c 4p
+Safeway Bakery double chocolate pie  : 1P 360g 410c 13p
+Safeway bakery fudge brownie  : 100g 393c 7.1p 
+Safeway Bakery Hershey's chocolate chunk cookie  : 100g 437c 4p 
+Safeway bakery iced fudge brownie  : 100g 393c 7.1p 
+Safeway blueberry buttermilk triangle cake slice  : 100g 350c 6p 
+Safeway brownie  : 100g 360c 8p 
+Safeway chocolate extreme jumbo cookie  : 1 57g 234c 4p
+Safeway chocolate extreme jumbo cookies  : 1 57g 234c 4p
+Safeway cinnamon swirl sliced loaf cake  : 1sl 45g 180c 2p
+Safeway deli fried pollack  : 100g 225c 22p 
+Safeway Hershey's vanilla chip macadamia nut cookie  : 1 57g 243c 2.4p
+Safeway Kitchens lite original syrup  : 4T g 100c 0p
+Safeway ReadyMeals lobster mac and cheese  : 1srv 150g 250c 11p
+Safeway strawberry lemonade swirl sliced loaf cake  : 1sl 45g 170c 2p
+salsa (10T, 156g, 59c,  : 0.4p salsa (10T, 156g, 59c, 0.4p salsa (10T, 156g, 59c, 0.4p salsa (10T, 156g, 59c, 0.4p
+salsa Tostitos chunky salsa  : 2T 33g 10c 0p
+Sambal Oelek chili paste  : 1T 15g 6c 0p
+Sambal Oelek chili paste  : 1T 20g 20c 0p
+San Jose, CA 95113 545-5640 aprium 3422  : 100g 48c 1.0p 
+Santa Cruz Coffee Roasting Company blueberry coffee cake  : 100g 375c 7p 
+Santa Cruz Coffee Roasting Company cinnamon coffee cake  : 120g 380c 4p 
+Santa Cruz Coffee Roasting Company lemon bar  : 100g 357c 7.1p 
+Santa Cruz Coffee Roasting Company lemon cake  : 100g 344c 7.8p 
+Santa Cruz Coffee Roasting Company orange blueberry scone  : 100g 344c 7.8p 
+Santitas totopos de maiz  : 9 28g 140c 2p
+Sau-Sea sweet Thai chili sauce  : 2T 30g 60c 0p
+scraped-down homemade brownie cookie  : 91g 438c 3.4p 
+seafood salad 242g, 341c, 18.2p)  : 280g 395c 21p 
+seafood salad  : 280g 395c 21p 
+semii-sweet mini chocolate chips  : 1T 15g 70c 0.4p
+shaoxing  : 2T 30g 32c 0p
+shao Xing  : 2T 30g 32c 0p
+shaoxing wine  : 2T 30g 32c 0p
+Sheng Kee Bakery cheese puff roll  : 77g 300c 12.5p 
+Sho Chiku Bai short grain rice  : 4T 52g 180c 3p
+short grain rice  : 0.25C 52g 180c 3p
+Sichuan Fuxin preserved radish  : 30g 65c 1p 
+Sichuan pepper  : 1T 7g 40c 1p
+Sierra Honey plum  : 1 71g 35c 0.7p
+Sierra Honey plums  : 1 71g 35c 0.7p
+Signature Farms dried berries  : 4T 40g 130c 0p
+Signature Farms dried berries  : 4T 40g 140c 0p
+Signature Farms dried blueberries  : 4T 40g 150c 0p
+Signature Select black cherry fudge chip frozen yogurt  : 0.67C 93g 130c 4p
+Signature Select black cherry fudge chip frozen yogurt  : 1C 140g 195c 6p
+Signature Select black raspberry chip ice cream  : 0.67C 89g 190c 2p
+Signature Select black raspberry chip ice cream  : 1C 134g 285c 3p
+Signature Select Bran Flakes  : 1C 40g 130c 4p
+Signature Select Brownie Moose Tracks ice cream  : 1C 134g 330c 4.5p
+Signature Select cherry vanilla ice cream  : 1C 134g 360c 5p
+Signature Select dried blueberries  : 4T 40g 150c 0p
+Signature Select dried cherries  : 4T 40g 130c 0.4p
+Signature Select dried cherries  : 4T 40g 130c 0.6p
+Signature Select dried wild blueberries32  : 4T 40g 150c 0p
+Signature Select dried wild blueberries  : 4T 40g 150c 0p
+Signature Select Extreme Moose Tracks  : 1C 133g 360c 6p
+Signature Select Extreme! Moose Tracks ice cream  : 1C 134g 360c 5p
+Signature Select frozen blueberries  : C 140g 70c 1p
+Signature Select Ice lemonade Lee Kum Kee Korean BBQ sauce  :  27g 45c 0.6p
+Signature Select lemon cheesecake ice cream  : 1C 134g 285c 4.5p
+Signature Select lite coconut milk  : 1C 256g 150c 0p
+Signature Select peach cobbler ice cream  : 0.67C 88g 200c 2p
+Signature Select pineapple chunks  : T 140g 80c 0p
+Signature Select pink salmon  : 0.33C 85g 100c 16p
+Signature Select pink salmon  : 0.3C 85g 100c 16p
+Signature Select semii-sweet chocolate chips  : 1T 15g 70c 0.4p
+Signature Select semii-sweet chocolate chips  : 1T 15g 70c 0p
+Signature Select semii-sweet mini chocolate chips  : 1T 15g 70c 0.4p
+Signature Select semi-sweet chocolate chips  : 1T 15g 70c 0.5p
+Signature Select semi-sweet chocolate chips white flour  : 1T 10g 33c 1p
+Signature Select semi-sweet mini chcolate chips  : 1T 15g 70g 1p
+Signature Select semi-sweet mini chocolate chips  : 1T 15g 70c 0.5p
+Signature Select shredded wheat  : 1C 60g 200c 7p
+Signature Select sugar free original syrup  : 2T 32g 15c 0p
+Signature Select sweetened shredded coconut  : 2T 15g 70c 0p
+Signature Select sweet & spicy mustard  : 1t 5g 10c 0p
+Signature Select SW style sweet & spicy mustard  : 1t 5g 10c 0p
+Signature Select SW style sweet & spicy mustard coconut flour  : 2T 15g 60c 2p
+Sig Sel SW style sweet & spicy mustard  : 1t 5g 10c 0p
+Silk dairy free heavy whipping cream  : 1T 17g 45c 0p
+Silk dairy free heavy whipping ctream  : 1T 16g 45c 0p
+Silk unsweetened cashew milk  : 1C 256g 25c 1p
+Silk unsweet vanilla almond milk  : 1C 256g 30c 1p
+Silk unsweet vanilla cashew milk  : 1C 256g 25c 1p
+Sinbo longkao vermicelli  : 1n 56g 200c 7.4p
+S'mores brownies  : 1 78g 410c 5p
+Smuckers sugar free apricot preserves  : 1T 17g 10c 0p
+Smuckers sugar free orange marmalade  : 1T 17g 10c 0p
+Smuckers sugar free red raspberry preserves  : 1T 17g 10c 0p
+Snickerdoodle  : 1 57g 234c 3p
+Snoop Cereal Frosted Drizzlerz  : 1C 60g 210c 5p
+SO Delicious coconutmilk yogurt alternative  : 1C 227g 107c 1.3p
+Special K Chocolatey Delight  : 1C 42g 160c 3p
+Special K Chocolatey Delight EOB  : 1C 42g 160c 3p
+spicy ahi poke  : 85g 142c 26p 
+squid steaks  : 100g 85c 16p 
+squid steaks  : 100g 89c 15.2p 
+squid steaks  : 113g 120c 16p 
+Staff of Life cherry cheese strudel  : 1 63g 231c 3.2p
+Staff of Life chocolate chocoalte chip oatmeal cookie  : 60g 235c 4p 
+Staff of Life chocolate chocoalte chip oatmeal cookies  : 60g 235c 4p 
+Starbucks marshmallow dream bar  : 1b 60g 230c 1p
+Star extra virgin olive oil  : 1T 12g 120c 0p
+strawberries  : 1C 150g 53c 1p
+Sumo 3632  : 100g 47c 0.9p 
+sunflower seeds  : 4T 28g 190c 6p
+Sunmaid golden raisins  : 4T 40g 120c 1p
+Sunmaid zante currants  : 4T 40g 120c 1p
+Sunny Select peanut butter cocoa spheres  : 1C 40g 170c 3p
+Sun Voi coconut milk  : 8T 15g 60c 0.4p 1cn
+surimi krab legs  : 100g 105c 14.5p 
+Surimi krab legs  : 100g 105c 14.5p 
+surimi krab legs  : 100g 80c 8p 
+sweetened condensed milk  : 2T 39g 130c 3p
+sweet pickle relish  : 1T 15g 15c 0p
+sweet & sour sauce Jasmine rice  : 4T 45g 160c 3p
+sweet & sour sauce wu long noodle  : 1n 56g 200c 7p
+Swerve aSR  : 1T 14g 0c 0p
+Swerve BSR  : 1T 14g 0c 0p
+Swerve BSR  : 1T 16g 0c 0p
+Swerve BSR A Taste of Thai peanut sauce mix  : 2T 19g 90c 3p
+Swerve BSR Kimlan soy paste  : 1T 19g 10c 0.4p
+Swerve BSR Lee Satay Peanut sauce  : 2T 25g 60c 1p
+Swerve CSR  : 1T 12g 0c 0p
+Swerve CSR  : 1T 14g 0c 0p
+Swerve SR 1.1T, 15g, 0c, 0p)  : 1T 14g 0c 0p
+Swerve SR  : 1T 14g 0c 0p
+Swerve SR  : 1T 14g 0g 0p
+Swerve SR  : 1T 14g 0p 
+Swiss Miss no sugar added hot cocoa mix  : 3T 18g 70c 2p
+Tang  : 1sc 36g 140c 0p
+Tanyoto chafing dish sauce  : 50g 312c 2p 
+tater kegs  : 102g 170c 9p 
+teriyaki sauce Jasmine rice  : 4T 45g 160c 3p
+Thai peanut sauce basmati rice  : 0.25C 45g 160c 4p
+Thai sauce Jasmine rice  : 4T 45g 160c 3p
+The Buttery apple-cinnamon rugelach  : 100g 345c 3p 
+The Buttery apricot danish  : 100g 310c 3.2p 
+The Buttery black-bottom cupcake flour  : 1T 10g 34c 1p
+The Buttery chocolate eclair  : 100g 280c 3.8p 
+The Buttery chocolate ganache mini-heart cake  : 100g 455c 7.7p 
+The Buttery chocolate ginger cookie  : 30g 116c 1.3p 
+The Buttery dulce de leche cookie  : 110g 570c 6.5p 
+The Buttery galleta dulce de leche  : 110g 570c 6.5p 
+The Buttery mini  : 128g 480c 7.1p 
+The Buttery pecan butter crunch  : 50g 120c 2p 
+The Buttery pumpkin cookie  : 38g 130c 1.3p 
+The Buttery salted caramel chocolate ganache cake  : 100g 420c 4.8p 
+Three Crabs fish sauce  : 1T 15g 15c 2p
+Three Wishes honey  : 1C 35g 130c 8p
+Three Wishes marshmallow  : 1C 35g 130c 8p
+thyme  : 1t 2g 5c 0.2p
+tiger figs 3246  : 100g 72c 0.8p 
+tilapia  : 100g 125c 23p 
+Tillamook Oregon Dark Cherry  : 1C 143g 315c 4.5p
+Tillamook spicy Mexican blend cheese  : 4T 28g 110c 6p
+Tillamook spicy Mexican cheese  : 4T 28g 110c 6p
+Toadal feijoa  : 100g 71c 1p 
+Toast Crunch Cinnamon Loaded  : w  vanilla creme 1C 42g 180c
+Too Good Gourmet cranberry white choc dunk cookies  : 1 28g 120c 1p
+Too Good vanilla yogurt  : 1C 227g 120c 17.3p
+Too Good vanilla yogurt  : 227g 120c 17.3p 
+tortillas de maiz  : 3 45g 100c 2p
+Tostitos chunky salsa  : 2T 33g 10c 0p
+Tostitos salsa  : 2T 33g 10c 0p
+tumeric  : 10g 32c 0.5p 
+turtle cheesecake  : 100g 240c 4.2p 
+unagi sauce Jasmine rice  : 4T 45g 160c 3p
+Uncle Chen chili garlic sauce minced garlic  : 1T 20g 20c 0.2p
+vanilla extract  : 1t 4g 10c 0p
+Very Cherry Plums  : 100g 52c 1p 
+Walden Farms 0 calorie blueberry syrup  : 1T 15g 0c 0p
+Walden Farms 0c blueberry syrup  : 1T 16g 0c 0p
+Walden Farms 0c blueberry syrup  : 2T 32g 0c 0p
+Walden Farms 0c chocolate dip  : 1T 16g 0c 0p
+Walden Farms 0C chocolate syrup  : 1T 15g 0c 0p
+Walden Farms 0c chocolate syrup  : 1T 16g 0c 0p
+Walden Farms 0C chocolate syrup  : 2T 30g c 0p
+Walden Farms 0c sychocolaterup  : 1T 16g 0c 0p
+Walden Farms blueberry syrup  : 1T 15g 0c 0p
+Walden Farms strawberry syrup  : 1T 15g 0c 0p
+Walden Farms strawberry syrup  : 1T g 0c 0p
+Walden Farms zero calorie blueberry syrup  : 1T 15g 0c 0p
+Wan Ja Shan rice vinegar  : 1T 15g 0c 0p
+water  : 1T 15g 0c 0p
+water catfish  : 100g 105c 19.2p 
+water catfish  : 113g 120c 16p 
+water cayenne  : 1T 5.3g 17c 0.4p
+Waterfront Bisro hot cocktail sauce  : 4T 68g 60c 1p
+Waterfront Bistro hot cocktail sauce  : 4T 68g 60c 1p
+Waterfront Bistro tartar sauce  : 2T 29g 80c 0p
+water green onion  : 100g 32c 1.5p 
+water Kinder origi  : 2T 34g 60c 1p
+water Kinder XXX  : 2T 34g 60c 1p
+water r+f catfish  : 100g 105c 19.2p 
+Wendy's Frosty Chocolatey cereal  : 1C 28g 100c 1.3p
+Western Dr feijoa  : 100g 71c 1p 
+white donut peach 3113  : 140g 60c 1p 
+white flour  : 1T 10g 33c 1p
+white fungus  : 100g 162c 4.9p 
+white nectarine 3035  : 100g 31c 0.7p 
+white onion  : 100g 30c 0.7p 
+white peach 4401  : 100g 31c 0.7p 
+white peach 4401  : 100g 39c 0.9p 
+white sugar  : 8.3T 100g 387c 0p
+Whole Foods 365 albacore  : 113g 140c 25p 
+Whole Foods brookie  : 1 71g 400c 5p
+Whole Foods brownie pecan pie  : 0.13pie 114g 480c 6p
+Whole Foods brownie pecan pie  : 0.13pie 227g 480c 6p
+Whole Foods Chocolate lava cake  : 113g 470c 8p 
+Whole Foods Chocolate Srprinkle Celebration cake  : 113g 460c 4p 
+Whole Foods Lilly's chocolate rugelach  : 1 28g 110c 1p
+Whole Foods Market 365 cookie dough ice cream  : 1C 144g 345c 6p
+Whole Foods Market chocolate eruption cake  : 170g 620c 6p 
+Whole Foods Market JM Rosen Fantasy Cheesecake  : 113g 610c 9p 
+Whole Foods Market pumpkin brownie blondie  : 71g 310c 4p 
+Woh Hup laksa paste  : 1T 15g 40c 1p
+Wole Foods Market pumpkin brownie blondie  : 71g 310c 4p 
+wu long noodle  : 1n 56g 200c 7p
+xanthan gum  : 1T 9g 30c 0p
+xanthan gum  : 1T 9g 30c, 0p 
+Yellow Gage plum  : 100g 60c 1.0p 
+Yellow Gage plum 4442  : 100g 60c 1.0p 
+yellow onion  : 100g 30c 0.7p 

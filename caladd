@@ -1,0 +1,29 @@
+#!/bin/bash
+
+CalDb=calct.dat
+
+while :; do
+    printf "New Item     : "
+    read item
+    printf "Units        : "
+    read units
+    printf "grams/unit   : "
+    read grams
+    printf "calories/unit: "
+    read cals
+    printf "protein/unit : "
+    read prot
+    printf "Add %s  :  %s %s %s %s\n    to %s ? " "$item" "$units" "$grams" "$cals" "$prot" $CalDb
+    read response
+    if [ "$response" != 'y' ]; then
+        echo "Not added."
+        break
+    fi
+    printf "%s  :  %s %s %s %s\n" "$item" "$units" "$grams" "$cals" "$prot" >> $CalDb 
+    printf "More? "
+    read response
+    if [ "$response" != 'y' ]; then
+        break
+    fi
+done
+sort -uo $CalDb $CalDb

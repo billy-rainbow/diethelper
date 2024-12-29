@@ -1,0 +1,32 @@
+#!/bin/bash
+
+Pgm=`basename "$0"`
+
+case "$1" in
+    ''|name)
+        col=1
+        ;;
+    weight|wt)
+        col=2
+        ;;
+    calories|cal)
+        col=3
+        ;;
+    protein|prot)
+        col=4
+        ;;
+    *)
+        echo "Error: column must be name, wt, cal, or prot"
+        exit 1
+        ;;
+esac
+
+# while read txt; do name=`echo $txt | cut -f1 -d'/'`; wt=`echo "$txt" | cut -f2 -d'/' | sed 's/g//'`; cal=`echo "$txt" | cut -f3 -d'/' | sed 's/c//'`; prot=`echo "$txt" | cut -f4 -d'/' | sed 's/p//'`; printf "%-60s\t%5s\t%5s\t%6s\n" "$name" $wt $cal $prot; done < cereal.db | sort -t$'\t' -k4,4n
+
+while read txt; do
+    name=`echo $txt | cut -f1 -d'/'`
+    wt=`echo "$txt" | cut -f2 -d'/' | sed 's/g//'`
+    cal=`echo "$txt" | cut -f3 -d'/' | sed 's/c//'`
+    prot=`echo "$txt" | cut -f4 -d'/' | sed 's/p//'`
+    printf "%-60s\t%5s\t%5s\t%6s\n" "$name" $wt $cal $prot
+done < cereal.db | sort -t$'\t' -k${col},${col}n

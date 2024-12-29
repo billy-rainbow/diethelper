@@ -1,0 +1,46 @@
+#!/usr/bin/python3
+"""
+Acting as a python programmer, write a script to split a text file into a list of  words using spaces, commas, and close parentheses for delimiters. Check the command line to see if a valid filename of an existing file has been supplied. If no filename has been specified, the script should prompt for the name of the text file.   Delete all words from the list that include characters that are not numbers or the lower case character 'c'.  Print the list on one line. Delete the lower case character 'c' and any other non-numeric characters from each entry, add them all together, and print the sum prefixed with the string "Total calories: "
+"""
+
+import os
+import sys
+import re
+
+def main():
+    # Check if a filename was specified on the command line
+    if len(sys.argv) == 2:
+        filename = sys.argv[1]
+    else:
+        # Prompt for the filename
+        filename = input("Enter the name of the text file: ")
+
+    # Open the file in read mode
+    with open(filename, "r") as f:
+        data = f.read()
+
+    # Split the data into a list of words
+    words = re.split(" |\,|\)", data)
+
+    # Remove any words that do not contain only numbers and lowercase 'c' characters
+    valid_words = []
+    for word in words:
+        if re.fullmatch("[0-9c]+", word):
+            valid_words.append(word)
+
+    # Print the list of valid words
+    print(valid_words)
+
+    # Remove the lowercase 'c' character and any other non-numeric characters from each word
+    calories = []
+    for word in valid_words:
+        calories.append(int(re.sub("[^\d]", "", word)))
+
+    # Add up all the calories
+    total_calories = sum(calories)
+
+    # Print the total calories
+    print("Total calories:", total_calories)
+
+if __name__ == "__main__":
+    main()

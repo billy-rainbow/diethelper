@@ -1,0 +1,48 @@
+#!/usr/bin/python
+
+# Initialize empty matrix
+data = []
+
+# Prompt for user input
+while True:
+    item, amount, ref_amt, cal_amt, protein_amt = input(
+        "item amt refamt cal/amt ptn/amt: "
+    ).split()
+
+    # Check if user wants to quit
+    if item == "q":
+        break
+
+    # Calculate and add derived values
+    cal_per_unit = float(cal_amt) / float(ref_amt)
+    protein_per_unit = float(protein_amt) / float(ref_amt)
+
+    # Append data to matrix
+    data.append(
+        [item, amount, ref_amt, cal_amt, protein_amt, cal_per_unit, protein_per_unit]
+    )
+
+# Print header row
+print(
+    "Item   Amount   Ref_Amt   cal/r_amt   protein/r_amt   cal/amt   protein/amt"
+)
+
+# Print data rows
+for item, amount, ref_amt, cal_amt, protein_amt, cal_per_unit, protein_per_unit in data:
+    print(
+        f"{item:<8}{amount:>8}{ref_amt:>8}{cal_amt:>8}{protein_amt:>8}{cal_per_unit:>8}{protein_per_unit:>8}"
+    )
+
+# Calculate and print totals
+total_amount = sum(float(amount) for item, amount, _, _, _, _, _ in data)
+total_cal_unit = sum(
+    float(cal_per_unit) * float(amount) for item, amount, _, _, _, cal_per_unit, _ in data
+)
+total_protein_unit = sum(
+    float(protein_per_unit) * float(amount)
+    for item, amount, _, _, _, _, protein_per_unit in data
+)
+
+print("-" * 70)
+print(f"Totals: {total_amount:>8}{total_cal_unit:>8}{total_protein_unit:>8}")
+
